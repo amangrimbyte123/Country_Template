@@ -5,6 +5,7 @@ interface PopularListingsProps {
 }
 
 export default function PopularListings({ basicInfo }: PopularListingsProps) {
+  const secondaryColor = basicInfo?.secondaryColor || '#F59E0B';
   const defaultCity = basicInfo?.defaultCity || 'Belo Horizonte';
   const defaultState = basicInfo?.defaultState || 'Minas Gerais';
   
@@ -44,11 +45,14 @@ export default function PopularListings({ basicInfo }: PopularListingsProps) {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-black text-center mb-12">
-          Popular Listings in {defaultCity}, {defaultState}
-        </h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+            Popular Listings in {defaultCity}, {defaultState}
+          </h2>
+          <div className="w-24 h-1 mx-auto mb-6" style={{ backgroundColor: secondaryColor }}></div>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {listings.map((listing) => (
             <div

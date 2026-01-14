@@ -109,7 +109,7 @@ export default function FAQ({ basicInfo }: FAQProps) {
           </div>
 
           {/* Bottom CTA */}
-          <div className="mt-12 text-center">
+          <div className="mt-16 text-center">
             <p className="text-gray-600 mb-4">
               Still have questions?
             </p>

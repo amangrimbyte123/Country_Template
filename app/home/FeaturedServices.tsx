@@ -5,6 +5,7 @@ interface FeaturedServicesProps {
 }
 
 export default function FeaturedServices({ basicInfo }: FeaturedServicesProps) {
+  const secondaryColor = basicInfo?.secondaryColor || '#F59E0B';
   const categories = [
     { name: 'Restaurants', icon: '🍽️', count: 1250 },
     { name: 'Hotels', icon: '🏨', count: 850 },
@@ -17,11 +18,14 @@ export default function FeaturedServices({ basicInfo }: FeaturedServicesProps) {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-black text-center mb-12">
-          Browse by Services
-        </h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+            Browse by Services
+          </h2>
+          <div className="w-24 h-1 mx-auto mb-6" style={{ backgroundColor: secondaryColor }}></div>
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {categories.map((category) => (
             <div

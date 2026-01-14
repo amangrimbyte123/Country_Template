@@ -54,16 +54,16 @@ export default function OurProcess({ basicInfo }: OurProcessProps) {
   ];
 
   return (
-    <section className="py-12 md:py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4 px-2">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4">
               How It Works
             </h2>
-            <div className="w-24 h-1 mx-auto mb-4 md:mb-6" style={{ backgroundColor: secondaryColor }}></div>
-            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-2">
+            <div className="w-24 h-1 mx-auto mb-6" style={{ backgroundColor: secondaryColor }}></div>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Getting started is simple. Follow these four easy steps to find and connect with the perfect service provider.
             </p>
           </div>
@@ -114,7 +114,7 @@ export default function OurProcess({ basicInfo }: OurProcessProps) {
           </div>
 
           {/* Bottom Note */}
-          <div className="mt-10 md:mt-16 text-center px-2">
+          <div className="mt-16 text-center">
             <div className="inline-block bg-gray-50 px-4 sm:px-6 md:px-8 py-3 md:py-4 rounded-full">
               <p className="text-sm sm:text-base text-gray-600">
                 <span className="font-bold text-black">Ready to get started?</span> Search for services now and experience the difference!
