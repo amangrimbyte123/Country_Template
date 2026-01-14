@@ -54,16 +54,16 @@ export default function OurProcess({ basicInfo }: OurProcessProps) {
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-12 md:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4 px-2">
               How It Works
             </h2>
-            <div className="w-24 h-1 mx-auto mb-6" style={{ backgroundColor: secondaryColor }}></div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <div className="w-24 h-1 mx-auto mb-4 md:mb-6" style={{ backgroundColor: secondaryColor }}></div>
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-2">
               Getting started is simple. Follow these four easy steps to find and connect with the perfect service provider.
             </p>
           </div>
@@ -77,13 +77,13 @@ export default function OurProcess({ basicInfo }: OurProcessProps) {
               <div className="absolute left-3/4 top-1/2 transform -translate-y-1/2 w-3 h-3 rounded-full" style={{ backgroundColor: secondaryColor }}></div>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {steps.map((step, index) => (
                 <div key={index} className="relative">
-                  <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                  <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                     {/* Step Number */}
                     <div 
-                      className="absolute -top-4 -left-4 w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg"
+                      className="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center text-white font-bold text-base sm:text-lg md:text-xl shadow-lg z-10"
                       style={{ backgroundColor: primaryColor }}
                     >
                       {step.number}
@@ -91,7 +91,7 @@ export default function OurProcess({ basicInfo }: OurProcessProps) {
 
                     {/* Icon */}
                     <div 
-                      className="w-20 h-20 rounded-full flex items-center justify-center mb-6 mt-4"
+                      className="w-16 h-16 sm:w-20 sm:h-20 md:w-20 md:h-20 rounded-full flex items-center justify-center mb-4 sm:mb-5 md:mb-6 mt-2 sm:mt-3 md:mt-4"
                       style={{ 
                         backgroundColor: `${secondaryColor}15`,
                         color: secondaryColor,
@@ -101,10 +101,10 @@ export default function OurProcess({ basicInfo }: OurProcessProps) {
                     </div>
 
                     {/* Content */}
-                    <h3 className="text-xl font-bold text-black mb-3">
+                    <h3 className="text-lg sm:text-xl font-bold text-black mb-2 sm:mb-3">
                       {step.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -114,9 +114,9 @@ export default function OurProcess({ basicInfo }: OurProcessProps) {
           </div>
 
           {/* Bottom Note */}
-          <div className="mt-16 text-center">
-            <div className="inline-block bg-gray-50 px-8 py-4 rounded-full">
-              <p className="text-gray-600">
+          <div className="mt-10 md:mt-16 text-center px-2">
+            <div className="inline-block bg-gray-50 px-4 sm:px-6 md:px-8 py-3 md:py-4 rounded-full">
+              <p className="text-sm sm:text-base text-gray-600">
                 <span className="font-bold text-black">Ready to get started?</span> Search for services now and experience the difference!
               </p>
             </div>

@@ -19,7 +19,7 @@ export default function HeroSection({ basicInfo }: HeroSectionProps) {
 
   return (
     <section 
-      className="relative min-h-[600px] flex items-center justify-center overflow-hidden"
+      className="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center overflow-hidden py-8 md:py-0 pt-[72px] md:pt-[72px]"
       style={{ 
         background: `linear-gradient(135deg, ${primaryColor} 0%, ${primaryColor}dd 50%, ${primaryColor}aa 100%)`,
       }}
@@ -49,24 +49,20 @@ export default function HeroSection({ basicInfo }: HeroSectionProps) {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 md:px-4 relative z-10 py-4 md:py-0">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-white/20 backdrop-blur-md rounded-full border border-white/30 animate-fade-in">
-            <span className="text-sm font-medium text-white">✨ Trusted by thousands</span>
-          </div>
-
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
-            <span className="block text-white drop-shadow-2xl animate-slide-up">
-              {siteName}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 md:mb-6 leading-tight px-2 md:px-0">
+            <span className="block text-white drop-shadow-2xl animate-slide-up mb-2">
+              ServiceFinder
+            </span>
+            <span className="block text-white drop-shadow-2xl animate-slide-up mb-4 md:mb-6">
+              Brazil
             </span>
             <span 
-              className="block bg-clip-text text-transparent animate-slide-up"
+              className="block text-white animate-slide-up"
               style={{ 
-                backgroundImage: `linear-gradient(90deg, #ffffff, ${secondaryColor}, #ffffff)`,
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
+                color: secondaryColor,
                 animationDelay: '0.2s',
                 animationFillMode: 'both',
               }}
@@ -76,13 +72,13 @@ export default function HeroSection({ basicInfo }: HeroSectionProps) {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg lg:text-xl text-white/90 mb-6 md:mb-10 max-w-2xl mx-auto leading-relaxed px-2 md:px-0">
             Connect with verified service providers in {defaultCity}, {defaultState}. 
             Get quality services delivered to your doorstep.
           </p>
 
           {/* Search Bar - Glass Morphism Design */}
-          <div className="max-w-3xl mx-auto mb-8">
+          <div className="max-w-3xl mx-auto mb-6 md:mb-8 px-2 md:px-0">
             <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl p-2 border border-white/20">
               <div className="flex flex-col md:flex-row gap-2">
                 <div className="flex-1 relative">
@@ -94,7 +90,7 @@ export default function HeroSection({ basicInfo }: HeroSectionProps) {
                   <input
                     type="text"
                     placeholder={`Search for ${defaultService} in ${defaultCity}...`}
-                    className="w-full pl-12 pr-4 py-4 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all"
+                    className="w-full pl-12 pr-4 py-3 md:py-4 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all text-sm md:text-base"
                     style={{ 
                       '--tw-ring-color': secondaryColor,
                     } as React.CSSProperties & { '--tw-ring-color'?: string }}
@@ -102,7 +98,7 @@ export default function HeroSection({ basicInfo }: HeroSectionProps) {
                 </div>
                 <div className="relative">
                   <select 
-                    className="px-4 py-4 rounded-xl text-black bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 appearance-none pr-10 transition-all"
+                    className="w-full md:w-auto px-4 py-3 md:py-4 rounded-xl text-black bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 appearance-none pr-10 transition-all text-sm md:text-base"
                     style={{ 
                       '--tw-ring-color': secondaryColor,
                     } as React.CSSProperties & { '--tw-ring-color'?: string }}
@@ -119,7 +115,7 @@ export default function HeroSection({ basicInfo }: HeroSectionProps) {
                   </div>
                 </div>
                 <button 
-                  className="px-8 py-4 rounded-xl font-bold text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
+                  className="w-full md:w-auto px-8 py-3 md:py-4 rounded-xl font-bold text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2 text-sm md:text-base"
                   style={{ 
                     backgroundColor: secondaryColor,
                   }}
@@ -134,30 +130,23 @@ export default function HeroSection({ basicInfo }: HeroSectionProps) {
           </div>
 
           {/* Quick Stats */}
-          <div className="flex flex-wrap justify-center gap-6 md:gap-8 mt-12">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8 mt-8 md:mt-12 px-2 md:px-0">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-1">10K+</div>
-              <div className="text-sm md:text-base text-white/80">Verified Providers</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">10K+</div>
+              <div className="text-xs sm:text-sm md:text-base text-white/80">Verified Providers</div>
             </div>
-            <div className="w-px h-12 bg-white/30"></div>
+            <div className="w-px h-10 md:h-12 bg-white/30"></div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-1">50K+</div>
-              <div className="text-sm md:text-base text-white/80">Happy Customers</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">50K+</div>
+              <div className="text-xs sm:text-sm md:text-base text-white/80">Happy Customers</div>
             </div>
-            <div className="w-px h-12 bg-white/30"></div>
+            <div className="w-px h-10 md:h-12 bg-white/30"></div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-1">4.8★</div>
-              <div className="text-sm md:text-base text-white/80">Average Rating</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">4.8★</div>
+              <div className="text-xs sm:text-sm md:text-base text-white/80">Average Rating</div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <svg className="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
       </div>
     </section>
   );
