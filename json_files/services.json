@@ -1,0 +1,18 @@
+{
+    "name": "Air Conditioner Repair",
+    "slug": "air-conditioner-repair",
+    "category": null,
+    "imageUrl": "https://clareservices.com/wp-content/uploads/2020/07/air-conditioning-repair-service-hyderabad.jpg",
+    "description": "Professional air conditioner repair services including AC troubleshooting, gas refilling, cooling issues, and compressor repairs.",
+    "seoTitle": "Air Conditioner Repair Services Near You",
+    "seoDescription": "Find trusted air conditioner repair technicians near you. Fast AC repair, maintenance, gas filling, and cooling issue fixes.",
+    "h1Title": "Air Conditioner Repair Services Near You",
+    "introText": "Professional air conditioner repair service for cooling issues, AC gas refill, compressor repair, and all HVAC troubleshooting.",
+    "$id": "6965d20f003af4040486",
+    "$sequence": 1,
+    "$createdAt": "2026-01-13T05:03:12.384+00:00",
+    "$updatedAt": "2026-01-13T05:03:12.384+00:00",
+    "$permissions": [],
+    "$databaseId": "6964c31c002f94c841d9",
+    "$tableId": "services"
+  }
