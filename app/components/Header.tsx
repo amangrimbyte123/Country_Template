@@ -55,19 +55,20 @@ export default function Header({ basicInfo }: HeaderProps) {
             className="flex items-center group transition-opacity hover:opacity-80 flex-shrink-0 h-full"
           >
             {logo ? (
-              <div className="relative flex-shrink-0 flex items-center" style={{ height: '100%', maxWidth: 'none' }}>
+              <div className="relative flex-shrink-0 flex items-center justify-center h-full py-2">
                 <Image
                   src={logo}
                   alt={logoAlt}
                   width={500}
                   height={130}
-                  className="object-contain"
+                  className="object-contain object-center"
                   priority
                   unoptimized
                   style={{ 
-                    height: '180px',
+                    height: '100%',
                     width: 'auto',
-                    maxHeight: '180px'
+                    maxHeight: '64px',
+                    maxWidth: '300px'
                   }}
                 />
               </div>

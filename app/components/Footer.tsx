@@ -89,17 +89,17 @@ export default async function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
               {logo ? (
-                <div className="relative flex items-center" style={{ height: '96px', maxWidth: '350px' }}>
+                <div className="relative flex items-center justify-start" style={{ maxHeight: '80px', maxWidth: '350px' }}>
                   <Image
                     src={logo}
                     alt={logoAlt}
                     width={350}
-                    height={96}
-                    className="object-contain h-full w-auto"
+                    height={80}
+                    className="object-contain object-left"
                     style={{ 
-                      filter: 'brightness(0) invert(1)',
-                      maxHeight: '96px',
-                      width: 'auto'
+                      maxHeight: '80px',
+                      width: 'auto',
+                      height: 'auto'
                     }}
                     priority
                     unoptimized
