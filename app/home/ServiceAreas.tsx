@@ -30,7 +30,7 @@ export default function ServiceAreas({ basicInfo, states }: ServiceAreasProps) {
                   className="text-3xl md:text-4xl font-bold text-center mb-8"
                   style={{ color: secondaryColor }}
                 >
-                  We Proudly Serve The Following Areas
+                  Servimos com Orgulho as Seguintes Áreas
                 </h2>
                 
                 {/* States Grid */}
@@ -61,7 +61,7 @@ export default function ServiceAreas({ basicInfo, states }: ServiceAreasProps) {
                     className="inline-block px-6 py-3 rounded-lg text-white font-bold transition-all duration-200 hover:shadow-lg transform hover:scale-105"
                     style={{ backgroundColor: primaryColor }}
                   >
-                    View All
+                    Ver Todos
                   </Link>
                 </div>
               </div>
@@ -72,10 +72,10 @@ export default function ServiceAreas({ basicInfo, states }: ServiceAreasProps) {
                 style={{ backgroundColor: secondaryColor }}
               >
                 <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-                  Need Service Fast?
+                  Precisa de Serviço Rápido?
                 </h3>
                 <p className="text-xl md:text-2xl font-bold text-white mb-8">
-                  Call Now for a Free Quote!
+                  Ligue Agora para um Orçamento Grátis!
                 </p>
 
                 {/* Phone Icon and Number */}
@@ -93,7 +93,7 @@ export default function ServiceAreas({ basicInfo, states }: ServiceAreasProps) {
                   </div>
                   
                   <div className="text-white">
-                    <p className="text-sm font-medium mb-1 opacity-90">CALL TODAY</p>
+                    <p className="text-sm font-medium mb-1 opacity-90">LIGUE HOJE</p>
                     <a 
                       href={`tel:${contactPhone.replace(/\s/g, '')}`}
                       className="text-2xl md:text-3xl font-bold hover:underline"

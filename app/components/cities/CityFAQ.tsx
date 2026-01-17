@@ -13,24 +13,24 @@ export default function CityFAQ({ city, primaryColor }: CityFAQProps) {
 
   const faqs = [
     {
-      question: `What services are available in ${city.name}?`,
-      answer: `We offer a wide range of home services in ${city.name} including AC repair, HVAC installation, appliance repair, plumbing, electrical work, and more. Browse our services page to see the complete list.`,
+      question: `Quais serviços estão disponíveis em ${city.name}?`,
+      answer: `Oferecemos uma ampla gama de serviços domésticos em ${city.name}, incluindo reparo de ar condicionado, instalação de climatização, reparo de eletrodomésticos, encanamento, trabalhos elétricos e muito mais. Navegue pela nossa página de serviços para ver a lista completa.`,
     },
     {
-      question: `How do I find a service provider in ${city.name}?`,
-      answer: `Simply browse our services, select the service you need, and you'll see a list of verified providers in ${city.name}. You can compare ratings, reviews, and contact them directly.`,
+      question: `Como encontro um prestador de serviços em ${city.name}?`,
+      answer: `Simplesmente navegue pelos nossos serviços, selecione o serviço que você precisa e verá uma lista de prestadores verificados em ${city.name}. Você pode comparar notas, avaliações e entrar em contato diretamente.`,
     },
     {
-      question: `Are all service providers verified?`,
-      answer: `Yes, all service providers listed on our platform are verified, licensed, and insured. We ensure quality and reliability for our customers.`,
+      question: `Todos os prestadores de serviços são verificados?`,
+      answer: `Sim, todos os prestadores de serviços listados em nossa plataforma são verificados, licenciados e segurados. Garantimos qualidade e confiabilidade para nossos clientes.`,
     },
     {
-      question: `What areas in ${city.name} do you cover?`,
-      answer: `We cover all areas within ${city.name} and surrounding regions. Most providers offer service throughout the entire city and metropolitan area.`,
+      question: `Quais áreas em ${city.name} vocês cobrem?`,
+      answer: `Cobrimos todas as áreas dentro de ${city.name} e regiões circundantes. A maioria dos prestadores oferece serviços em toda a cidade e área metropolitana.`,
     },
     {
-      question: `How quickly can I get service in ${city.name}?`,
-      answer: `Response times vary by provider, but most offer same-day or next-day service. You can contact providers directly to discuss availability and scheduling.`,
+      question: `Com que rapidez posso obter serviço em ${city.name}?`,
+      answer: `Os tempos de resposta variam por prestador, mas a maioria oferece serviço no mesmo dia ou no dia seguinte. Você pode entrar em contato diretamente com os prestadores para discutir disponibilidade e agendamento.`,
     },
   ];
 
@@ -42,7 +42,7 @@ export default function CityFAQ({ city, primaryColor }: CityFAQProps) {
     <section className="py-16 mb-12 bg-gray-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-black text-center mb-12">
-          Frequently Asked Questions About {city.name}
+          Perguntas Frequentes Sobre {city.name}
         </h2>
         <div className="max-w-3xl mx-auto">
           {faqs.map((faq, index) => (

@@ -7,8 +7,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const basicInfo = await getBasicInfo();
   
   return {
-    title: `All Services – ${basicInfo?.siteName || 'ServiceFinder Brazil'}`,
-    description: basicInfo?.metaDescription || 'Browse all available services and find trusted service providers near you.',
+    title: `Todos os Serviços – ${basicInfo?.siteName || 'ServiceFinder Brazil'}`,
+    description: basicInfo?.metaDescription || 'Navegue por todos os serviços disponíveis e encontre prestadores de serviços confiáveis perto de você.',
     keywords: basicInfo?.metaKeywords || 'services, service providers, home services',
   };
 }
@@ -33,10 +33,10 @@ export default async function ServicesPage() {
       >
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            Browse All Services
+            Navegar Todos os Serviços
           </h1>
           <p className="text-center text-xl mt-4 opacity-90">
-            Discover professional services available in {defaultCity}, {defaultState}
+            Descubra serviços profissionais disponíveis em {defaultCity}, {defaultState}
           </p>
         </div>
       </div>
@@ -111,7 +111,7 @@ export default async function ServicesPage() {
                         className="text-sm font-semibold"
                         style={{ color: primaryColor }}
                       >
-                        Learn More
+                        Saiba Mais
                       </span>
                       <svg 
                         className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
@@ -130,7 +130,7 @@ export default async function ServicesPage() {
           </div>
         ) : (
           <div className="text-center py-16">
-            <p className="text-gray-600 text-lg">No services found. Please check back later.</p>
+            <p className="text-gray-600 text-lg">Nenhum serviço encontrado. Por favor, verifique novamente mais tarde.</p>
           </div>
         )}
       </div>

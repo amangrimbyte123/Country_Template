@@ -13,10 +13,10 @@ export default function AboutUs({ basicInfo }: AboutUsProps) {
   const secondaryColor = basicInfo?.secondaryColor || '#F59E0B';
 
   const stats = [
-    { number: '10K+', label: 'Verified Providers' },
-    { number: '50K+', label: 'Happy Customers' },
-    { number: '500+', label: 'Cities Covered' },
-    { number: '4.8★', label: 'Average Rating' },
+    { number: '10K+', label: 'Prestadores Verificados' },
+    { number: '50K+', label: 'Clientes Satisfeitos' },
+    { number: '500+', label: 'Cidades Cobertas' },
+    { number: '4.8★', label: 'Avaliação Média' },
   ];
 
   return (
@@ -26,11 +26,11 @@ export default function AboutUs({ basicInfo }: AboutUsProps) {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-              About {siteName}
+              Sobre {siteName}
             </h2>
             <div className="w-24 h-1 mx-auto mb-6" style={{ backgroundColor: secondaryColor }}></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              We are Brazil's leading service directory platform, connecting customers with trusted local service providers across the country.
+              Somos a principal plataforma de diretório de serviços do Brasil, conectando clientes com prestadores de serviços locais confiáveis em todo o país.
             </p>
           </div>
 
@@ -39,36 +39,36 @@ export default function AboutUs({ basicInfo }: AboutUsProps) {
             {/* Left Content */}
             <div>
               <h3 className="text-2xl font-bold text-black mb-4">
-                Your Trusted Partner in Finding Quality Services
+                Seu Parceiro Confiável para Encontrar Serviços de Qualidade
               </h3>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                At {siteName}, we understand the importance of finding reliable and professional service providers. 
-                Our platform makes it easy for you to discover, compare, and connect with verified businesses 
-                in your area.
+                Na {siteName}, entendemos a importância de encontrar prestadores de serviços confiáveis e profissionais. 
+                Nossa plataforma facilita a descoberta, comparação e conexão com empresas verificadas 
+                na sua região.
               </p>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Whether you're looking for home repairs, professional services, restaurants, or entertainment venues, 
-                we've got you covered. Our comprehensive directory features thousands of verified listings with 
-                real customer reviews to help you make informed decisions.
+                Se você está procurando reparos domésticos, serviços profissionais, restaurantes ou locais de entretenimento, 
+                temos tudo para você. Nosso diretório abrangente apresenta milhares de listagens verificadas com 
+                avaliações reais de clientes para ajudá-lo a tomar decisões informadas.
               </p>
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center gap-2">
                   <svg className="w-5 h-5" style={{ color: secondaryColor }} fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-black font-medium">100% Verified Listings</span>
+                  <span className="text-black font-medium">100% Listagens Verificadas</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <svg className="w-5 h-5" style={{ color: secondaryColor }} fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-black font-medium">24/7 Support</span>
+                  <span className="text-black font-medium">Suporte 24/7</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <svg className="w-5 h-5" style={{ color: secondaryColor }} fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-black font-medium">Real Customer Reviews</span>
+                  <span className="text-black font-medium">Avaliações Reais de Clientes</span>
                 </div>
               </div>
             </div>
@@ -84,8 +84,8 @@ export default function AboutUs({ basicInfo }: AboutUsProps) {
                 >
                   <div className="text-center p-8">
                     <div className="text-6xl mb-4">🇧🇷</div>
-                    <h4 className="text-2xl font-bold text-white mb-2">Serving Brazil</h4>
-                    <p className="text-white/90">Connecting communities across the nation</p>
+                    <h4 className="text-2xl font-bold text-white mb-2">Servindo o Brasil</h4>
+                    <p className="text-white/90">Conectando comunidades em todo o país</p>
                   </div>
                 </div>
                 {/* Decorative elements */}

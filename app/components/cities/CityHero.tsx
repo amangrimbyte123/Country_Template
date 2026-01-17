@@ -28,7 +28,7 @@ export default function CityHero({ city, primaryColor }: CityHeroProps) {
         <div className="container mx-auto px-4 pb-12">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-              {city.h1Title || `${city.name} Home Service Providers`}
+              {city.h1Title || `Prestadores de Serviços Domésticos em ${city.name}`}
             </h1>
             <p className="text-xl text-white/90 max-w-2xl">
               {city.introText || city.description}

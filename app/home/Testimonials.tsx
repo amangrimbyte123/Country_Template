@@ -15,48 +15,48 @@ export default function Testimonials({ basicInfo }: TestimonialsProps) {
       name: 'Maria Silva',
       location: 'São Paulo, SP',
       rating: 5,
-      text: 'Found the perfect plumber within minutes! The platform made it so easy to compare prices and read reviews. Highly recommend!',
-      service: 'Plumbing Services',
+      text: 'Encontrei o encanador perfeito em minutos! A plataforma facilitou muito comparar preços e ler avaliações. Altamente recomendado!',
+      service: 'Serviços de Encanamento',
       avatar: '👩',
     },
     {
       name: 'João Santos',
       location: 'Rio de Janeiro, RJ',
       rating: 5,
-      text: 'As a business owner, being listed here has brought me so many new customers. The verification process gives customers confidence.',
-      service: 'Business Owner',
+      text: 'Como proprietário de negócio, estar listado aqui me trouxe muitos clientes novos. O processo de verificação dá confiança aos clientes.',
+      service: 'Proprietário de Negócio',
       avatar: '👨',
     },
     {
       name: 'Ana Costa',
       location: 'Belo Horizonte, MG',
       rating: 5,
-      text: 'I love how I can see real reviews from other customers. It helped me choose the best restaurant for my anniversary dinner!',
-      service: 'Restaurant Booking',
+      text: 'Adoro como posso ver avaliações reais de outros clientes. Isso me ajudou a escolher o melhor restaurante para meu jantar de aniversário!',
+      service: 'Reserva de Restaurante',
       avatar: '👩‍🦰',
     },
     {
       name: 'Carlos Oliveira',
       location: 'Brasília, DF',
       rating: 5,
-      text: 'The search functionality is amazing. Found exactly what I needed for home repairs, and the service was excellent!',
-      service: 'Home Repair',
+      text: 'A funcionalidade de busca é incrível. Encontrei exatamente o que precisava para reparos domésticos, e o serviço foi excelente!',
+      service: 'Reparo Doméstico',
       avatar: '👨‍💼',
     },
     {
       name: 'Fernanda Lima',
       location: 'Curitiba, PR',
       rating: 5,
-      text: 'This platform saved me so much time! Instead of calling multiple places, I could compare everything in one place.',
-      service: 'Event Planning',
+      text: 'Esta plataforma me economizou muito tempo! Em vez de ligar para vários lugares, pude comparar tudo em um só lugar.',
+      service: 'Planejamento de Eventos',
       avatar: '👩‍💻',
     },
     {
       name: 'Roberto Alves',
       location: 'Porto Alegre, RS',
       rating: 5,
-      text: 'Great experience overall. The customer support was helpful when I had questions, and I found reliable service providers quickly.',
-      service: 'IT Services',
+      text: 'Ótima experiência no geral. O suporte ao cliente foi útil quando tive dúvidas, e encontrei prestadores de serviços confiáveis rapidamente.',
+      service: 'Serviços de TI',
       avatar: '👨‍🔧',
     },
   ];
@@ -68,11 +68,11 @@ export default function Testimonials({ basicInfo }: TestimonialsProps) {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-              What Our Users Say
+              O Que Nossos Usuários Dizem
             </h2>
             <div className="w-24 h-1 mx-auto mb-6" style={{ backgroundColor: secondaryColor }}></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Don't just take our word for it. Here's what real customers have to say about their experience.
+              Não acredite apenas na nossa palavra. Veja o que clientes reais têm a dizer sobre sua experiência.
             </p>
           </div>
 
@@ -134,15 +134,15 @@ export default function Testimonials({ basicInfo }: TestimonialsProps) {
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div>
               <div className="text-4xl font-bold mb-2" style={{ color: primaryColor }}>4.8/5</div>
-              <div className="text-gray-600">Average Rating</div>
+              <div className="text-gray-600">Avaliação Média</div>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2" style={{ color: primaryColor }}>50K+</div>
-              <div className="text-gray-600">Happy Customers</div>
+              <div className="text-gray-600">Clientes Satisfeitos</div>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2" style={{ color: primaryColor }}>98%</div>
-              <div className="text-gray-600">Satisfaction Rate</div>
+              <div className="text-gray-600">Taxa de Satisfação</div>
             </div>
           </div>
         </div>

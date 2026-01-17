@@ -25,11 +25,11 @@ export default function PopularCities({ basicInfo, cities }: PopularCitiesProps)
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-              Popular Cities
+              Cidades Populares
             </h2>
             <div className="w-24 h-1 mx-auto mb-6" style={{ backgroundColor: secondaryColor }}></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Discover trusted service providers in these popular cities across {defaultState}
+              Descubra prestadores de serviços confiáveis nestas cidades populares em {defaultState}
             </p>
           </div>
 
@@ -95,7 +95,7 @@ export default function PopularCities({ basicInfo, cities }: PopularCitiesProps)
                         className="text-sm font-semibold"
                         style={{ color: primaryColor }}
                       >
-                        Explore Services
+                        Explorar Serviços
                       </span>
                       <svg 
                         className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
@@ -120,7 +120,7 @@ export default function PopularCities({ basicInfo, cities }: PopularCitiesProps)
               className="inline-block px-8 py-4 rounded-full text-white font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
               style={{ backgroundColor: secondaryColor }}
             >
-              View All Cities
+              Ver Todas as Cidades
             </Link>
           </div>
         </div>

@@ -20,18 +20,18 @@ export async function generateMetadata(): Promise<Metadata> {
   const basicInfo = await getBasicInfo();
   
   return {
-    title: basicInfo?.metaTitle || "ServiceFinder Brazil – Find Local Repair, Cleaning & HVAC Services",
-    description: basicInfo?.metaDescription || "ServiceFinder helps you find trusted air conditioner repair, washing machine service, plumbing, and home services in your city.",
-    keywords: basicInfo?.metaKeywords || "local services, ac repair, hvac, washing machine repair, plumber, electrician",
+    title: basicInfo?.metaTitle || "ServiceFinder Brazil – Encontre Reparos Locais, Limpeza e Serviços de Climatização",
+    description: basicInfo?.metaDescription || "ServiceFinder ajuda você a encontrar reparo de ar condicionado confiável, serviço de lavadora, encanamento e serviços domésticos na sua cidade.",
+    keywords: basicInfo?.metaKeywords || "serviços locais, reparo de ar condicionado, climatização, reparo de lavadora, encanador, eletricista",
     openGraph: {
       title: basicInfo?.ogTitle || "ServiceFinder Brazil",
-      description: basicInfo?.ogDescription || "Find verified service providers in your city.",
+      description: basicInfo?.ogDescription || "Encontre prestadores de serviços verificados na sua cidade.",
       images: basicInfo?.ogImage ? [basicInfo.ogImage] : [],
     },
     twitter: {
       card: "summary_large_image",
       title: basicInfo?.twitterTitle || "ServiceFinder Brazil",
-      description: basicInfo?.twitterDescription || "Search and connect with trusted service providers near you.",
+      description: basicInfo?.twitterDescription || "Busque e conecte-se com prestadores de serviços confiáveis perto de você.",
       images: basicInfo?.twitterImage ? [basicInfo.twitterImage] : [],
     },
   };
@@ -46,7 +46,7 @@ export default async function RootLayout({
   const basicInfo = await getBasicInfo();
 
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >

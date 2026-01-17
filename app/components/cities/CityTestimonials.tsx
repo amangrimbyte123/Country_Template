@@ -12,22 +12,22 @@ export default function CityTestimonials({ city, primaryColor }: CityTestimonial
       name: 'Maria Silva',
       location: city.name,
       rating: 5,
-      text: `Found an excellent AC repair service in ${city.name} through this platform. Quick response and professional service!`,
-      service: 'AC Repair',
+      text: `Encontrei um excelente serviço de reparo de ar condicionado em ${city.name} através desta plataforma. Resposta rápida e serviço profissional!`,
+      service: 'Reparo de Ar Condicionado',
     },
     {
       name: 'João Santos',
       location: city.name,
       rating: 5,
-      text: `The washing machine repair service was outstanding. The technician arrived on time and fixed the issue quickly.`,
-      service: 'Appliance Repair',
+      text: `O serviço de reparo de lavadora foi excelente. O técnico chegou no horário e consertou o problema rapidamente.`,
+      service: 'Reparo de Eletrodomésticos',
     },
     {
       name: 'Ana Costa',
       location: city.name,
       rating: 5,
-      text: `Highly recommend this platform for finding reliable home services in ${city.name}. Very satisfied with the HVAC installation.`,
-      service: 'HVAC Installation',
+      text: `Altamente recomendo esta plataforma para encontrar serviços domésticos confiáveis em ${city.name}. Muito satisfeita com a instalação de climatização.`,
+      service: 'Instalação de Climatização',
     },
   ];
 
@@ -35,7 +35,7 @@ export default function CityTestimonials({ city, primaryColor }: CityTestimonial
     <section className="py-16 mb-12 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-black text-center mb-12">
-          What Our Customers Say About {city.name}
+          O Que Nossos Clientes Dizem Sobre {city.name}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (

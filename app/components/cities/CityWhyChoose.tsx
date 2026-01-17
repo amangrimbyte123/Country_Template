@@ -9,23 +9,23 @@ export default function CityWhyChoose({ city, primaryColor }: CityWhyChooseProps
   const reasons = [
     {
       icon: '🏆',
-      title: 'Top-Rated Providers',
-      description: `Access to the most trusted and highly-rated service providers in ${city.name}`,
+      title: 'Prestadores Mais Bem Avaliados',
+      description: `Acesso aos prestadores de serviços mais confiáveis e bem avaliados em ${city.name}`,
     },
     {
       icon: '⚡',
-      title: 'Quick Response',
-      description: 'Get connected with providers who respond quickly to your service requests',
+      title: 'Resposta Rápida',
+      description: 'Conecte-se com prestadores que respondem rapidamente às suas solicitações de serviço',
     },
     {
       icon: '💰',
-      title: 'Competitive Pricing',
-      description: 'Compare prices from multiple providers to get the best value',
+      title: 'Preços Competitivos',
+      description: 'Compare preços de vários prestadores para obter o melhor valor',
     },
     {
       icon: '🛡️',
-      title: 'Verified & Insured',
-      description: 'All listed providers are verified, licensed, and insured for your peace of mind',
+      title: 'Verificado e Segurado',
+      description: 'Todos os prestadores listados são verificados, licenciados e segurados para sua tranquilidade',
     },
   ];
 
@@ -33,7 +33,7 @@ export default function CityWhyChoose({ city, primaryColor }: CityWhyChooseProps
     <section className="py-16 mb-12 bg-gray-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-black text-center mb-12">
-          Why Choose Service Providers in {city.name}?
+          Por Que Escolher Prestadores de Serviços em {city.name}?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {reasons.map((reason, index) => (

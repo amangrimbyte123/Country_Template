@@ -21,14 +21,14 @@ export default async function Home() {
   // Fallback data if database fetch fails
   const siteData = basicInfo || {
     siteName: 'ServiceFinder Brazil',
-    tagline: 'Find Trusted Local Service Providers Near You',
+    tagline: 'Encontre Prestadores de Serviços Locais Confiáveis Perto de Você',
     bannerImage: 'https://upload.wikimedia.org/wikipedia/commons/9/98/Cidade_Maravilhosa.jpg',
-    bannerAlt: 'Local Services Directory in Brazil',
+    bannerAlt: 'Diretório de Serviços Locais no Brasil',
     primaryColor: '#0F4C81',
     secondaryColor: '#F59E0B',
     defaultCity: 'Belo Horizonte',
     defaultState: 'Minas Gerais',
-    defaultService: 'Air Conditioner Repair',
+    defaultService: 'Reparo de Ar Condicionado',
   };
 
   return (

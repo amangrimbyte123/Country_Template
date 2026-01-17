@@ -45,7 +45,7 @@ function ContactForm({ primaryColor, secondaryColor }: { primaryColor: string; s
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
         <label htmlFor="name" className="block text-sm font-semibold text-black mb-2">
-          Full Name <span className="text-red-500">*</span>
+          Nome Completo <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
@@ -55,12 +55,12 @@ function ContactForm({ primaryColor, secondaryColor }: { primaryColor: string; s
           onChange={handleChange}
           className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:border-transparent transition-all text-black placeholder-gray-400"
           style={{ focusRingColor: primaryColor } as React.CSSProperties}
-          placeholder="John Doe"
+          placeholder="João Silva"
         />
       </div>
       <div>
         <label htmlFor="email" className="block text-sm font-semibold text-black mb-2">
-          Email Address <span className="text-red-500">*</span>
+          Endereço de Email <span className="text-red-500">*</span>
         </label>
         <input
           type="email"
@@ -70,12 +70,12 @@ function ContactForm({ primaryColor, secondaryColor }: { primaryColor: string; s
           onChange={handleChange}
           className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:border-transparent transition-all text-black placeholder-gray-400"
           style={{ focusRingColor: primaryColor } as React.CSSProperties}
-          placeholder="john.doe@example.com"
+          placeholder="joao.silva@exemplo.com"
         />
       </div>
       <div>
         <label htmlFor="subject" className="block text-sm font-semibold text-black mb-2">
-          Subject <span className="text-red-500">*</span>
+          Assunto <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
@@ -85,12 +85,12 @@ function ContactForm({ primaryColor, secondaryColor }: { primaryColor: string; s
           onChange={handleChange}
           className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:border-transparent transition-all text-black placeholder-gray-400"
           style={{ focusRingColor: primaryColor } as React.CSSProperties}
-          placeholder="How can we help?"
+          placeholder="Como podemos ajudar?"
         />
       </div>
       <div>
         <label htmlFor="message" className="block text-sm font-semibold text-black mb-2">
-          Message <span className="text-red-500">*</span>
+          Mensagem <span className="text-red-500">*</span>
         </label>
         <textarea
           id="message"
@@ -100,7 +100,7 @@ function ContactForm({ primaryColor, secondaryColor }: { primaryColor: string; s
           onChange={handleChange}
           className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:border-transparent transition-all text-black placeholder-gray-400 resize-none"
           style={{ focusRingColor: primaryColor } as React.CSSProperties}
-          placeholder="Tell us more about your inquiry..."
+          placeholder="Conte-nos mais sobre sua consulta..."
         ></textarea>
       </div>
       {submitStatus === 'success' && (
@@ -109,7 +109,7 @@ function ContactForm({ primaryColor, secondaryColor }: { primaryColor: string; s
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
-            <span className="font-medium">Message sent successfully! We'll get back to you soon.</span>
+            <span className="font-medium">Mensagem enviada com sucesso! Entraremos em contato em breve.</span>
           </div>
         </div>
       )}
@@ -119,7 +119,7 @@ function ContactForm({ primaryColor, secondaryColor }: { primaryColor: string; s
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
             </svg>
-            <span className="font-medium">Something went wrong. Please try again.</span>
+            <span className="font-medium">Algo deu errado. Por favor, tente novamente.</span>
           </div>
         </div>
       )}
@@ -135,11 +135,11 @@ function ContactForm({ primaryColor, secondaryColor }: { primaryColor: string; s
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
-            Sending...
+            Enviando...
           </span>
         ) : (
           <span className="flex items-center justify-center gap-2">
-            Send Message
+            Enviar Mensagem
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
             </svg>
@@ -160,8 +160,8 @@ export default function ContactPageClient({ basicInfo }: ContactPageClientProps)
 
   const contactMethods = [
     {
-      title: 'Email Us',
-      description: 'Send us an email anytime',
+      title: 'Envie um Email',
+      description: 'Envie-nos um email a qualquer momento',
       value: supportEmail,
       href: `mailto:${supportEmail}`,
       icon: (
@@ -171,8 +171,8 @@ export default function ContactPageClient({ basicInfo }: ContactPageClientProps)
       ),
     },
     {
-      title: 'Call Us',
-      description: 'Mon to Fri from 9am to 6pm',
+      title: 'Ligue para Nós',
+      description: 'Seg a Sex das 9h às 18h',
       value: contactPhone,
       href: `tel:${contactPhone}`,
       icon: (
@@ -182,8 +182,8 @@ export default function ContactPageClient({ basicInfo }: ContactPageClientProps)
       ),
     },
     {
-      title: 'Visit Us',
-      description: 'Come say hello at our office',
+      title: 'Visite-nos',
+      description: 'Venha nos visitar em nosso escritório',
       value: businessAddress,
       href: `https://maps.google.com/?q=${encodeURIComponent(businessAddress)}`,
       icon: (
@@ -196,9 +196,9 @@ export default function ContactPageClient({ basicInfo }: ContactPageClientProps)
   ];
 
   const businessHours = [
-    { day: 'Monday - Friday', hours: '9:00 AM - 6:00 PM' },
-    { day: 'Saturday', hours: '10:00 AM - 4:00 PM' },
-    { day: 'Sunday', hours: 'Closed' },
+    { day: 'Segunda - Sexta', hours: '9:00 - 18:00' },
+    { day: 'Sábado', hours: '10:00 - 16:00' },
+    { day: 'Domingo', hours: 'Fechado' },
   ];
 
   return (
@@ -217,10 +217,10 @@ export default function ContactPageClient({ basicInfo }: ContactPageClientProps)
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
-              Contact Us
+              Entre em Contato
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 animate-slide-up">
-              We'd love to hear from you. Get in touch with us today!
+              Adoraríamos ouvir de você. Entre em contato conosco hoje!
             </p>
             <div className="w-24 h-1 mx-auto bg-white/80 rounded-full"></div>
           </div>
@@ -263,11 +263,11 @@ export default function ContactPageClient({ basicInfo }: ContactPageClientProps)
             <div className="grid md:grid-cols-2 gap-12">
               {/* Contact Information */}
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Get In Touch</h2>
+                <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Entre em Contato</h2>
                 <div className="w-24 h-1 mb-8" style={{ backgroundColor: secondaryColor }}></div>
                 <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                  Have a question or need assistance? We're here to help! Reach out to us through any of the methods below, 
-                  and we'll get back to you as soon as possible.
+                  Tem uma pergunta ou precisa de ajuda? Estamos aqui para ajudar! Entre em contato conosco através de qualquer um dos métodos abaixo, 
+                  e retornaremos o mais breve possível.
                 </p>
 
                 {/* Business Hours */}
@@ -276,7 +276,7 @@ export default function ContactPageClient({ basicInfo }: ContactPageClientProps)
                     <svg className="w-6 h-6" style={{ color: primaryColor }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    Business Hours
+                    Horário de Funcionamento
                   </h3>
                   <div className="space-y-2">
                     {businessHours.map((schedule, index) => (
@@ -290,7 +290,7 @@ export default function ContactPageClient({ basicInfo }: ContactPageClientProps)
 
                 {/* Social Media */}
                 <div>
-                  <h3 className="text-xl font-bold text-black mb-4">Follow Us</h3>
+                  <h3 className="text-xl font-bold text-black mb-4">Siga-nos</h3>
                   <div className="flex gap-4">
                     {['Facebook', 'Instagram', 'Twitter', 'LinkedIn'].map((social) => (
                       <a
@@ -311,7 +311,7 @@ export default function ContactPageClient({ basicInfo }: ContactPageClientProps)
               {/* Contact Form */}
               <div>
                 <div className="p-8 rounded-2xl bg-white shadow-lg border border-gray-100">
-                  <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Send Us a Message</h2>
+                  <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Envie-nos uma Mensagem</h2>
                   <div className="w-24 h-1 mb-8" style={{ backgroundColor: secondaryColor }}></div>
                   <ContactForm primaryColor={primaryColor} secondaryColor={secondaryColor} />
                 </div>
@@ -326,10 +326,10 @@ export default function ContactPageClient({ basicInfo }: ContactPageClientProps)
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">Find Us</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">Encontre-nos</h2>
               <div className="w-24 h-1 mx-auto mb-6" style={{ backgroundColor: secondaryColor }}></div>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Visit our office or get directions to our location
+                Visite nosso escritório ou obtenha direções para nossa localização
               </p>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-200 h-96 bg-gray-100 flex items-center justify-center">
@@ -346,7 +346,7 @@ export default function ContactPageClient({ basicInfo }: ContactPageClientProps)
                   className="inline-flex items-center gap-2 mt-4 px-6 py-2 rounded-full font-semibold text-white hover:shadow-lg transform hover:scale-105 transition-all duration-200"
                   style={{ backgroundColor: primaryColor }}
                 >
-                  Open in Google Maps
+                  Abrir no Google Maps
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>

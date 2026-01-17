@@ -7,7 +7,7 @@ export default async function Footer() {
   const basicInfo = await getBasicInfo();
   
   const siteName = basicInfo?.siteName || 'ServiceFinder Brazil';
-  const tagline = basicInfo?.tagline || 'Your comprehensive guide to discovering businesses, services, and places across Brazil.';
+  const tagline = basicInfo?.tagline || 'Seu guia abrangente para descobrir empresas, serviços e lugares em todo o Brasil.';
   const supportEmail = basicInfo?.supportEmail || 'support@servicefinder.com.br';
   const contactPhone = basicInfo?.contactPhone || '+55 31 99999-9999';
   const businessAddress = basicInfo?.businessAddress || 'Belo Horizonte, Minas Gerais, Brazil';
@@ -18,27 +18,27 @@ export default async function Footer() {
   const logoAlt = basicInfo?.logoAlt || `${siteName} Logo`;
 
   const quickLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About Us' },
-    { href: '/services', label: 'Services' },
-    { href: '/cities', label: 'Cities' },
-    { href: '/states', label: 'States' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/', label: 'Início' },
+    { href: '/about', label: 'Sobre Nós' },
+    { href: '/services', label: 'Serviços' },
+    { href: '/cities', label: 'Cidades' },
+    { href: '/states', label: 'Estados' },
+    { href: '/contact', label: 'Contato' },
   ];
 
   const services = [
-    { href: '/services/air-conditioner-repair', label: 'AC Repair' },
-    { href: '/services/washing-machine-repair', label: 'Washing Machine' },
-    { href: '/services/plumbing', label: 'Plumbing' },
-    { href: '/services/electrical', label: 'Electrical' },
-    { href: '/services/cleaning', label: 'Cleaning' },
-    { href: '/services/hvac', label: 'HVAC' },
+    { href: '/services/air-conditioner-repair', label: 'Reparo de Ar Condicionado' },
+    { href: '/services/washing-machine-repair', label: 'Lavadora' },
+    { href: '/services/plumbing', label: 'Encanamento' },
+    { href: '/services/electrical', label: 'Elétrica' },
+    { href: '/services/cleaning', label: 'Limpeza' },
+    { href: '/services/hvac', label: 'Climatização' },
   ];
 
   const legalLinks = [
-    { href: '/privacy', label: 'Privacy Policy' },
-    { href: '/terms', label: 'Terms of Service' },
-    { href: '/cookies', label: 'Cookie Policy' },
+    { href: '/privacy', label: 'Política de Privacidade' },
+    { href: '/terms', label: 'Termos de Serviço' },
+    { href: '/cookies', label: 'Política de Cookies' },
   ];
 
   const socialLinks = [
@@ -136,7 +136,7 @@ export default async function Footer() {
 
           {/* Quick Links Column */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-white mb-4">Links Rápidos</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -157,7 +157,7 @@ export default async function Footer() {
 
           {/* Services Column */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Popular Services</h4>
+            <h4 className="text-lg font-semibold text-white mb-4">Serviços Populares</h4>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.href}>
@@ -178,7 +178,7 @@ export default async function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Get in Touch</h4>
+            <h4 className="text-lg font-semibold text-white mb-4">Entre em Contato</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

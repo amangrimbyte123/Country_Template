@@ -14,36 +14,36 @@ export default function FAQ({ basicInfo }: FAQProps) {
 
   const faqs = [
     {
-      question: 'How do I search for services on the platform?',
-      answer: 'Simply use the search bar at the top of the page. Enter the service you\'re looking for, select your location, and click search. You can also browse by categories or use our advanced filters to narrow down your results.',
+      question: 'Como posso buscar serviços na plataforma?',
+      answer: 'Simplesmente use a barra de pesquisa no topo da página. Digite o serviço que você está procurando, selecione sua localização e clique em buscar. Você também pode navegar por categorias ou usar nossos filtros avançados para refinar seus resultados.',
     },
     {
-      question: 'Are all businesses verified?',
-      answer: 'Yes! Every business listed on our platform undergoes a comprehensive verification process. We verify business licenses, contact information, and authenticity to ensure you only see legitimate and trustworthy service providers.',
+      question: 'Todas as empresas são verificadas?',
+      answer: 'Sim! Toda empresa listada em nossa plataforma passa por um processo abrangente de verificação. Verificamos licenças comerciais, informações de contato e autenticidade para garantir que você veja apenas prestadores de serviços legítimos e confiáveis.',
     },
     {
-      question: 'How can I contact a service provider?',
-      answer: 'Once you find a service provider you\'re interested in, click on their listing to view their full profile. You\'ll find contact information including phone number, email, and sometimes a direct messaging option through our platform.',
+      question: 'Como posso entrar em contato com um prestador de serviços?',
+      answer: 'Depois de encontrar um prestador de serviços que te interessa, clique na listagem para ver o perfil completo. Você encontrará informações de contato incluindo telefone, email e às vezes uma opção de mensagem direta através da nossa plataforma.',
     },
     {
-      question: 'Can I leave a review after using a service?',
-      answer: 'Absolutely! We encourage all users to share their experiences. After using a service, you can log in to your account and leave a detailed review with ratings. Your feedback helps other users make informed decisions.',
+      question: 'Posso deixar uma avaliação depois de usar um serviço?',
+      answer: 'Absolutamente! Encorajamos todos os usuários a compartilharem suas experiências. Depois de usar um serviço, você pode fazer login na sua conta e deixar uma avaliação detalhada com notas. Seu feedback ajuda outros usuários a tomarem decisões informadas.',
     },
     {
-      question: 'Is the platform free to use?',
-      answer: 'Yes, searching and browsing our directory is completely free for users. Service providers may have their own pricing for the services they offer, but using our platform to find them costs nothing.',
+      question: 'A plataforma é gratuita para usar?',
+      answer: 'Sim, pesquisar e navegar em nosso diretório é completamente gratuito para usuários. Os prestadores de serviços podem ter seus próprios preços para os serviços que oferecem, mas usar nossa plataforma para encontrá-los não custa nada.',
     },
     {
-      question: 'How do I report a problem with a listing?',
-      answer: 'If you encounter any issues with a listing, you can report it directly from the listing page using the "Report" button. Our team reviews all reports and takes appropriate action to maintain the quality of our directory.',
+      question: 'Como posso reportar um problema com uma listagem?',
+      answer: 'Se você encontrar algum problema com uma listagem, pode reportá-la diretamente na página da listagem usando o botão "Reportar". Nossa equipe revisa todos os relatórios e toma as medidas apropriadas para manter a qualidade do nosso diretório.',
     },
     {
-      question: 'Can businesses add themselves to the directory?',
-      answer: 'Yes! We welcome businesses to join our platform. Service providers can create a profile, get verified, and start receiving inquiries from potential customers. Visit our business registration page to get started.',
+      question: 'As empresas podem se adicionar ao diretório?',
+      answer: 'Sim! Damos as boas-vindas às empresas para se juntarem à nossa plataforma. Os prestadores de serviços podem criar um perfil, ser verificados e começar a receber consultas de clientes em potencial. Visite nossa página de registro de empresas para começar.',
     },
     {
-      question: 'Do you cover all cities in Brazil?',
-      answer: 'We\'re continuously expanding our coverage. Currently, we have listings in over 500 cities across Brazil, with new locations being added regularly. Use the location filter to see if your area is covered.',
+      question: 'Vocês cobrem todas as cidades do Brasil?',
+      answer: 'Estamos continuamente expandindo nossa cobertura. Atualmente, temos listagens em mais de 500 cidades em todo o Brasil, com novos locais sendo adicionados regularmente. Use o filtro de localização para ver se sua área está coberta.',
     },
   ];
 
@@ -58,11 +58,11 @@ export default function FAQ({ basicInfo }: FAQProps) {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-              Frequently Asked Questions
+              Perguntas Frequentes
             </h2>
             <div className="w-24 h-1 mx-auto mb-6" style={{ backgroundColor: secondaryColor }}></div>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Find answers to common questions about our platform and services
+              Encontre respostas para perguntas comuns sobre nossa plataforma e serviços
             </p>
           </div>
 
@@ -111,14 +111,14 @@ export default function FAQ({ basicInfo }: FAQProps) {
           {/* Bottom CTA */}
           <div className="mt-16 text-center">
             <p className="text-gray-600 mb-4">
-              Still have questions?
+              Ainda tem perguntas?
             </p>
             <a
               href="/contact"
               className="inline-block px-8 py-3 rounded-full text-white font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
               style={{ backgroundColor: secondaryColor }}
             >
-              Contact Us
+              Entre em Contato
             </a>
           </div>
         </div>

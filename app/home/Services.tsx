@@ -26,11 +26,11 @@ export default function Services({ basicInfo, services }: ServicesProps) {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-              Our Services
+              Nossos Serviços
             </h2>
             <div className="w-24 h-1 mx-auto mb-6" style={{ backgroundColor: secondaryColor }}></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Discover a wide range of professional services available in {defaultCity}, {defaultState}
+              Descubra uma ampla gama de serviços profissionais disponíveis em {defaultCity}, {defaultState}
             </p>
           </div>
 
@@ -102,7 +102,7 @@ export default function Services({ basicInfo, services }: ServicesProps) {
                         className="text-sm font-semibold"
                         style={{ color: primaryColor }}
                       >
-                        Learn More
+                        Saiba Mais
                       </span>
                       <svg 
                         className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
@@ -127,7 +127,7 @@ export default function Services({ basicInfo, services }: ServicesProps) {
               className="inline-block px-8 py-4 rounded-full text-white font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
               style={{ backgroundColor: secondaryColor }}
             >
-              View All Services
+              Ver Todos os Serviços
             </Link>
           </div>
         </div>

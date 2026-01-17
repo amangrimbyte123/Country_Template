@@ -10,22 +10,22 @@ export default function CityStats({ city, primaryColor, secondaryColor }: CitySt
   // Mock stats - in a real app, these would come from the database
   const stats = [
     {
-      label: 'Service Providers',
+      label: 'Prestadores de Serviços',
       value: '500+',
       icon: '👷',
     },
     {
-      label: 'Services Available',
+      label: 'Serviços Disponíveis',
       value: '50+',
       icon: '🔧',
     },
     {
-      label: 'Happy Customers',
+      label: 'Clientes Satisfeitos',
       value: '10K+',
       icon: '😊',
     },
     {
-      label: 'Average Rating',
+      label: 'Avaliação Média',
       value: '4.8★',
       icon: '⭐',
     },
@@ -35,7 +35,7 @@ export default function CityStats({ city, primaryColor, secondaryColor }: CitySt
     <section className="py-12 mb-12 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-100">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-black text-center mb-8">
-          {city.name} at a Glance
+          {city.name} em Resumo
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, index) => (

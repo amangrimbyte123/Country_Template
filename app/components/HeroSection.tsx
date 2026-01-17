@@ -11,7 +11,7 @@ export default function HeroSection({ basicInfo }: HeroSectionProps) {
   const primaryColor = basicInfo.primaryColor || '#0F4C81';
   const secondaryColor = basicInfo.secondaryColor || '#F59E0B';
   const siteName = basicInfo.siteName || 'ServiceFinder Brazil';
-  const tagline = basicInfo.tagline || 'Find Trusted Local Service Providers Near You';
+  const tagline = basicInfo.tagline || 'Encontre Prestadores de Serviços Locais Confiáveis Perto de Você';
   const bannerImage = basicInfo.bannerImage || '';
   const defaultCity = basicInfo.defaultCity || 'Belo Horizonte';
   const defaultState = basicInfo.defaultState || 'Minas Gerais';
@@ -64,7 +64,7 @@ export default function HeroSection({ basicInfo }: HeroSectionProps) {
                 <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="text-sm font-bold text-white tracking-wide">Brazil's #1 Service Directory</span>
+                <span className="text-sm font-bold text-white tracking-wide">O Diretório de Serviços #1 do Brasil</span>
               </div>
 
               {/* Main Heading with Gradient */}
@@ -95,16 +95,16 @@ export default function HeroSection({ basicInfo }: HeroSectionProps) {
 
               {/* Subtitle with Better Typography */}
               <p className="text-base md:text-lg text-white/95 mb-8 max-w-lg md:max-w-none leading-relaxed font-medium" style={{ letterSpacing: '0.01em' }}>
-                Connect with verified service providers in <span className="font-semibold text-white">{defaultCity}, {defaultState}</span>. 
-                Get quality services delivered to your doorstep.
+                Conecte-se com prestadores de serviços verificados em <span className="font-semibold text-white">{defaultCity}, {defaultState}</span>. 
+                Obtenha serviços de qualidade entregues na sua porta.
               </p>
 
               {/* Enhanced Quick Stats */}
               <div className="flex flex-wrap gap-6 md:gap-8 mb-8">
                 {[
-                  { value: '10K+', label: 'Verified Providers', icon: '✓' },
-                  { value: '50K+', label: 'Happy Customers', icon: '😊' },
-                  { value: '4.8★', label: 'Avg Rating', icon: '⭐' }
+                  { value: '10K+', label: 'Prestadores Verificados', icon: '✓' },
+                  { value: '50K+', label: 'Clientes Satisfeitos', icon: '😊' },
+                  { value: '4.8★', label: 'Avaliação Média', icon: '⭐' }
                 ].map((stat, idx) => (
                   <div key={idx} className="text-center md:text-left group">
                     <div className="flex items-center gap-2 mb-1">
@@ -147,7 +147,7 @@ export default function HeroSection({ basicInfo }: HeroSectionProps) {
                       </svg>
                     </div>
                     <h2 className="text-2xl font-bold text-black" style={{ letterSpacing: '-0.02em' }}>
-                      Find Services Near You
+                      Encontre Serviços Perto de Você
                     </h2>
                   </div>
                   
@@ -201,7 +201,7 @@ export default function HeroSection({ basicInfo }: HeroSectionProps) {
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
-                        Search Now
+                        Buscar Agora
                       </span>
                       <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
                     </button>
@@ -212,7 +212,7 @@ export default function HeroSection({ basicInfo }: HeroSectionProps) {
                     <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="font-medium">100% Free • Verified Providers • Instant Results</span>
+                    <span className="font-medium">100% Grátis • Prestadores Verificados • Resultados Instantâneos</span>
                   </div>
                 </div>
               </div>

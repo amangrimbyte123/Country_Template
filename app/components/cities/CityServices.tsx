@@ -12,7 +12,7 @@ export default function CityServices({ services, city, primaryColor }: CityServi
   return (
     <section className="mb-12">
       <h2 className="text-3xl font-bold text-black mb-8 text-center">
-        Services Available in {city.name}
+        Serviços Disponíveis em {city.name}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service) => (
@@ -43,7 +43,7 @@ export default function CityServices({ services, city, primaryColor }: CityServi
                   className="text-sm font-semibold"
                   style={{ color: primaryColor }}
                 >
-                  View Providers
+                  Ver Prestadores
                 </span>
                 <svg 
                   className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"

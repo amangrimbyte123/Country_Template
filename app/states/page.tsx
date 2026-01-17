@@ -7,8 +7,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const basicInfo = await getBasicInfo();
   
   return {
-    title: `All States – ${basicInfo?.siteName || 'ServiceFinder Brazil'}`,
-    description: basicInfo?.metaDescription || 'Browse all states and find trusted service providers in your area.',
+    title: `Todos os Estados – ${basicInfo?.siteName || 'ServiceFinder Brazil'}`,
+    description: basicInfo?.metaDescription || 'Navegue por todos os estados e encontre prestadores de serviços confiáveis na sua área.',
     keywords: basicInfo?.metaKeywords || 'states, service providers, home services',
   };
 }
@@ -31,10 +31,10 @@ export default async function StatesPage() {
       >
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            Browse All States
+            Navegar Todos os Estados
           </h1>
           <p className="text-center text-xl mt-4 opacity-90">
-            Discover trusted service providers across all states in Brazil
+            Descubra prestadores de serviços confiáveis em todos os estados do Brasil
           </p>
         </div>
       </div>
@@ -102,7 +102,7 @@ export default async function StatesPage() {
                         className="text-sm font-semibold"
                         style={{ color: primaryColor }}
                       >
-                        Explore Services
+                        Explorar Serviços
                       </span>
                       <svg 
                         className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
@@ -121,7 +121,7 @@ export default async function StatesPage() {
           </div>
         ) : (
           <div className="text-center py-16">
-            <p className="text-gray-600 text-lg">No states found. Please check back later.</p>
+            <p className="text-gray-600 text-lg">Nenhum estado encontrado. Por favor, verifique novamente mais tarde.</p>
           </div>
         )}
       </div>

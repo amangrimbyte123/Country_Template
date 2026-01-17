@@ -33,10 +33,10 @@ export default function Header({ basicInfo }: HeaderProps) {
   }, []);
 
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/services', label: 'Services' },
-    { href: '/about', label: 'About' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/', label: 'Início' },
+    { href: '/services', label: 'Serviços' },
+    { href: '/about', label: 'Sobre' },
+    { href: '/contact', label: 'Contato' },
   ];
 
   return (
@@ -108,7 +108,7 @@ export default function Header({ basicInfo }: HeaderProps) {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
               </svg>
-              Get Started
+              Começar
             </Link>
 
             {/* Mobile Menu Button */}
@@ -153,7 +153,7 @@ export default function Header({ basicInfo }: HeaderProps) {
               className="block mx-4 mt-4 px-6 py-3 text-center rounded-full font-semibold text-white shadow-md"
               style={{ backgroundColor: secondaryColor }}
             >
-              Get Started
+              Começar
             </Link>
           </nav>
         </div>
