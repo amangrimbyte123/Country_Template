@@ -1,17 +1,24 @@
-import { getServiceBySlug, getBasicInfo, getCities } from '@/app/lib/database';
+import { getServiceBySlug, getBasicInfo, getCities, getStates } from '@/app/lib/database';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import ServiceSubServices from '@/app/components/services/ServiceSubServices';
 import ServiceBenefits from '@/app/components/services/ServiceBenefits';
-import ServiceBrands from '@/app/components/services/ServiceBrands';
-import ServiceSymptoms from '@/app/components/services/ServiceSymptoms';
-import ServiceWhyChoose from '@/app/components/services/ServiceWhyChoose';
-import ServiceFAQ from '@/app/components/services/ServiceFAQ';
-import ServiceTestimonials from '@/app/components/services/ServiceTestimonials';
-import ServiceAreas from '@/app/components/services/ServiceAreas';
 import WhatsAppButton from '@/app/components/WhatsAppButton';
+import AboutUs from '@/app/home/AboutUs';
+import RefrigeratorServices from '@/app/components/RefrigeratorServices';
+import RefrigeratorCTA from '@/app/components/RefrigeratorCTA';
+import RefrigeratorSymptoms from '@/app/components/RefrigeratorSymptoms';
+import RefrigeratorAdvantages from '@/app/components/RefrigeratorAdvantages';
+import RefrigeratorBrands from '@/app/components/RefrigeratorBrands';
+import ServiceAreasSection from '@/app/components/ServiceAreasSection';
+import WhyWeAreFirstChoice from '@/app/home/WhyWeAreFirstChoice';
+import OurProcess from '@/app/home/OurProcess';
+import Testimonials from '@/app/home/Testimonials';
+import FAQ from '@/app/home/FAQ';
+import PopularCitiesSection from '@/app/components/PopularCitiesSection';
+import CTA from '@/app/home/CTA';
 
 interface ServicePageProps {
   params: Promise<{ slug: string }>;
@@ -46,6 +53,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const service = await getServiceBySlug(slug);
   const basicInfo = await getBasicInfo();
   const cities = await getCities(50);
+  const states = await getStates(12);
 
   if (!service) {
     notFound();
@@ -57,6 +65,19 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const defaultCity = basicInfo?.defaultCity || 'Belo Horizonte';
   const defaultState = basicInfo?.defaultState || 'Minas Gerais';
   const contactPhone = basicInfo?.contactPhone || '+55 31 99999-9999';
+  
+  // Prepare siteData for home page components (same structure as home page)
+  const siteData = basicInfo || {
+    siteName: 'ServiceFinder Brazil',
+    tagline: 'Encontre Prestadores de Serviços Locais Confiáveis Perto de Você',
+    bannerImage: 'https://upload.wikimedia.org/wikipedia/commons/9/98/Cidade_Maravilhosa.jpg',
+    bannerAlt: 'Diretório de Serviços Locais no Brasil',
+    primaryColor: '#0F4C81',
+    secondaryColor: '#F59E0B',
+    defaultCity: 'Belo Horizonte',
+    defaultState: 'Minas Gerais',
+    defaultService: 'Reparo de Ar Condicionado',
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -216,84 +237,25 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
             {/* Benefits Section */}
             <ServiceBenefits service={service} primaryColor={primaryColor} secondaryColor={secondaryColor} />
-
-            {/* Brands Section */}
-            <ServiceBrands service={service} primaryColor={primaryColor} secondaryColor={secondaryColor} />
-
-            {/* Symptoms Section */}
-            <ServiceSymptoms service={service} primaryColor={primaryColor} secondaryColor={secondaryColor} />
-
-            {/* Why Choose Section */}
-            <ServiceWhyChoose service={service} primaryColor={primaryColor} secondaryColor={secondaryColor} defaultCity={defaultCity} />
-
-            {/* CTA Section */}
-            <div 
-              className="rounded-xl p-8 md:p-12 text-center text-white mb-12"
-              style={{ backgroundColor: secondaryColor }}
-            >
-              <h3 className="text-3xl md:text-4xl font-bold mb-4">
-                {service.name} Perto de Mim
-              </h3>
-              <p className="text-xl mb-6 opacity-90 max-w-2xl mx-auto">
-                Precisa de {service.name.toLowerCase()}? Resolvemos com atendimento rápido e garantia!
-                Assistência técnica em {defaultCity} 24h com peças originais.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="px-8 py-3 bg-white text-black rounded-full font-bold hover:shadow-lg transform hover:scale-105 transition-all duration-200"
-                >
-                  Solicite seu orçamento
-                </Link>
-                <a
-                  href={`https://wa.me/${contactPhone.replace(/\D/g, '')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-3 bg-transparent border-2 border-white rounded-full font-bold hover:bg-white/10 transition-all duration-200"
-                >
-                  Fale no WhatsApp
-                </a>
-              </div>
-            </div>
-
-            {/* FAQ Section */}
-            <ServiceFAQ service={service} primaryColor={primaryColor} secondaryColor={secondaryColor} />
-
-            {/* Testimonials Section */}
-            <ServiceTestimonials service={service} primaryColor={primaryColor} secondaryColor={secondaryColor} defaultCity={defaultCity} />
-
-            {/* Service Areas */}
-            <ServiceAreas cities={cities} service={service} primaryColor={primaryColor} secondaryColor={secondaryColor} />
-
-            {/* Final CTA */}
-            <div 
-              className="rounded-xl p-8 md:p-12 text-center text-white mt-12"
-              style={{ backgroundColor: primaryColor }}
-            >
-              <h3 className="text-3xl md:text-4xl font-bold mb-4">
-                Precisa de {service.name} em {defaultCity}?
-              </h3>
-              <p className="text-xl mb-6 opacity-90">
-                Encontre prestadores de serviços confiáveis perto de você
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="px-8 py-3 bg-white text-black rounded-full font-bold hover:shadow-lg transform hover:scale-105 transition-all duration-200"
-                >
-                  Solicite Agora
-                </Link>
-                <Link
-                  href="/contact"
-                  className="px-8 py-3 bg-transparent border-2 border-white rounded-full font-bold hover:bg-white/10 transition-all duration-200"
-                >
-                  Entre em Contato
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </section>
+
+      {/* Home Page Sections - In Same Order as Home Page */}
+      <AboutUs basicInfo={siteData} />
+      <RefrigeratorServices basicInfo={siteData} />
+      <RefrigeratorCTA basicInfo={siteData} />
+      <RefrigeratorSymptoms basicInfo={siteData} />
+      <PopularCitiesSection basicInfo={siteData} cities={cities.slice(0, 12)} />
+      <RefrigeratorCTA basicInfo={siteData} />
+      <RefrigeratorAdvantages basicInfo={siteData} />
+      <RefrigeratorBrands basicInfo={siteData} />
+      <ServiceAreasSection basicInfo={siteData} states={states} />
+      <WhyWeAreFirstChoice basicInfo={siteData} />
+      <OurProcess basicInfo={siteData} />
+      <Testimonials basicInfo={siteData} />
+      <FAQ basicInfo={siteData} />
+      <CTA basicInfo={siteData} />
 
       {/* WhatsApp Floating Button */}
       <WhatsAppButton phone={contactPhone} />

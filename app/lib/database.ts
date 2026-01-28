@@ -257,18 +257,7 @@ export async function getServices(limit: number = 12): Promise<Service[]> {
     return [];
   } catch (error) {
     console.error('Error fetching services:', error);
-    // Fallback to JSON file if database fails
-    try {
-      const fs = await import('fs/promises');
-      const path = await import('path');
-      const filePath = path.join(process.cwd(), 'json_files', 'services.json');
-      const fileContent = await fs.readFile(filePath, 'utf-8');
-      const services = JSON.parse(fileContent);
-      return Array.isArray(services) ? services : [services];
-    } catch (jsonError) {
-      console.error('Error reading services from JSON:', jsonError);
-      return [];
-    }
+    return [];
   }
 }
 
@@ -287,20 +276,7 @@ export async function getServiceBySlug(slug: string): Promise<Service | null> {
     return null;
   } catch (error) {
     console.error('Error fetching service by slug:', error);
-    // Fallback to JSON file if database fails
-    try {
-      const fs = await import('fs/promises');
-      const path = await import('path');
-      const filePath = path.join(process.cwd(), 'json_files', 'services.json');
-      const fileContent = await fs.readFile(filePath, 'utf-8');
-      const services = JSON.parse(fileContent);
-      const serviceArray = Array.isArray(services) ? services : [services];
-      const service = serviceArray.find((s: Service) => s.slug === slug);
-      return service || null;
-    } catch (jsonError) {
-      console.error('Error reading service from JSON:', jsonError);
-      return null;
-    }
+    return null;
   }
 }
 
@@ -319,19 +295,7 @@ export async function getSingleService(): Promise<Service | null> {
     return null;
   } catch (error) {
     console.error('Error fetching single service:', error);
-    // Fallback to JSON file if database fails
-    try {
-      const fs = await import('fs/promises');
-      const path = await import('path');
-      const filePath = path.join(process.cwd(), 'json_files', 'services.json');
-      const fileContent = await fs.readFile(filePath, 'utf-8');
-      const services = JSON.parse(fileContent);
-      const serviceArray = Array.isArray(services) ? services : [services];
-      return serviceArray.length > 0 ? serviceArray[0] : null;
-    } catch (jsonError) {
-      console.error('Error reading service from JSON:', jsonError);
-      return null;
-    }
+    return null;
   }
 }
 

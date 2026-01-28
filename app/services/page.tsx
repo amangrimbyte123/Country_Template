@@ -24,14 +24,14 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ServicesPage() {
   const service = await getSingleService();
   
-  // Redirect to single service page if service exists
-  if (service) {
+  // Redirect to single service page if service exists and has a slug
+  if (service && service.slug) {
     redirect(`/services/${service.slug}`);
   }
 
   // If no service found, show error message
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center">
+    <div className="min-h-screen bg-white flex items-center justify-center pt-[72px]">
       <div className="text-center">
         <h1 className="text-4xl font-bold text-black mb-4">Serviço Não Encontrado</h1>
         <p className="text-gray-600 text-lg">Nenhum serviço disponível no momento.</p>
