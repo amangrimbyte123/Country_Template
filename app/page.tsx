@@ -1,12 +1,17 @@
-import { getBasicInfo, getServices, getStates, getCities } from './lib/database';
+import { getBasicInfo, getSingleService, getStates, getCities } from './lib/database';
 import HeroSection from './components/HeroSection';
 import AboutUs from './home/AboutUs';
-import Services from './home/Services';
-import PopularCities from './home/PopularCities';
+import TypesOfRefrigerators from './components/TypesOfRefrigerators';
+import RefrigeratorServices from './components/RefrigeratorServices';
+import RefrigeratorCTA from './components/RefrigeratorCTA';
+import RefrigeratorSymptoms from './components/RefrigeratorSymptoms';
+import RefrigeratorAdvantages from './components/RefrigeratorAdvantages';
+import RefrigeratorBrands from './components/RefrigeratorBrands';
+import ServiceAreasSection from './components/ServiceAreasSection';
+import PopularCitiesSection from './components/PopularCitiesSection';
 import WhyWeAreFirstChoice from './home/WhyWeAreFirstChoice';
 import OurProcess from './home/OurProcess';
 import Testimonials from './home/Testimonials';
-import ServiceAreas from './home/ServiceAreas';
 import FAQ from './home/FAQ';
 import CTA from './home/CTA';
 import type { BasicInfo } from './lib/database';
@@ -14,7 +19,7 @@ import type { BasicInfo } from './lib/database';
 export default async function Home() {
   // Fetch data from Appwrite at render time (Server Component - great for SEO)
   const basicInfo: BasicInfo | null = await getBasicInfo();
-  const services = await getServices(12);
+  const service = await getSingleService(); // Get single service instead of multiple
   const states = await getStates(12);
   const cities = await getCities(12);
 
@@ -33,12 +38,18 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      <HeroSection basicInfo={siteData} />
+      <HeroSection basicInfo={siteData} service={service} />
       <AboutUs basicInfo={siteData} />
-      <Services basicInfo={siteData} services={services} />
+      <TypesOfRefrigerators basicInfo={siteData} />
+      <RefrigeratorServices basicInfo={siteData} />
+      <RefrigeratorCTA basicInfo={siteData} />
+      <RefrigeratorSymptoms basicInfo={siteData} />
+      <PopularCitiesSection basicInfo={siteData} cities={cities} />
+      <RefrigeratorCTA basicInfo={siteData} />
+      <RefrigeratorAdvantages basicInfo={siteData} />
+      <RefrigeratorBrands basicInfo={siteData} />
+      <ServiceAreasSection basicInfo={siteData} states={states} />
       <WhyWeAreFirstChoice basicInfo={siteData} />
-      <PopularCities basicInfo={siteData} cities={cities} />
-      <ServiceAreas basicInfo={siteData} states={states} />
       <OurProcess basicInfo={siteData} />
       <Testimonials basicInfo={siteData} />
       <FAQ basicInfo={siteData} />

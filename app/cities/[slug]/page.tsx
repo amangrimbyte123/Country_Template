@@ -1,4 +1,4 @@
-import { getCityBySlug, getBasicInfo, getServices, getListingsByCityId } from '@/app/lib/database';
+import { getCityBySlug, getBasicInfo, getSingleService, getListingsByCityId } from '@/app/lib/database';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import CityHero from '@/app/components/cities/CityHero';
@@ -44,7 +44,7 @@ export default async function CityPage({ params }: CityPageProps) {
   const { slug } = await params;
   const city = await getCityBySlug(slug);
   const basicInfo = await getBasicInfo();
-  const services = await getServices(12);
+  const service = await getSingleService(); // Get single service instead of multiple
   const listings = city?.$id ? await getListingsByCityId(city.$id, 50) : [];
 
   if (!city) {
@@ -76,8 +76,8 @@ export default async function CityPage({ params }: CityPageProps) {
             {/* City Stats */}
             <CityStats city={city} primaryColor={primaryColor} secondaryColor={secondaryColor} />
 
-            {/* Services Available */}
-            <CityServices services={services} city={city} primaryColor={primaryColor} />
+            {/* Single Service Available */}
+            {service && <CityServices service={service} city={city} primaryColor={primaryColor} />}
 
             {/* Why Choose Section */}
             <CityWhyChoose city={city} primaryColor={primaryColor} />

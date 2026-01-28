@@ -1,4 +1,4 @@
-import { getStateBySlug, getBasicInfo, getServices, getCitiesByStateId } from '@/app/lib/database';
+import { getStateBySlug, getBasicInfo, getSingleService, getCitiesByStateId } from '@/app/lib/database';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -36,7 +36,7 @@ export default async function StatePage({ params }: StatePageProps) {
   const { slug } = await params;
   const state = await getStateBySlug(slug);
   const basicInfo = await getBasicInfo();
-  const services = await getServices(12);
+  const service = await getSingleService(); // Get single service instead of multiple
   const cities = state?.$id ? await getCitiesByStateId(state.$id, 20) : [];
 
   if (!state) {
@@ -172,21 +172,20 @@ export default async function StatePage({ params }: StatePageProps) {
               </div>
             )}
 
-            {/* Services Available */}
-            <div className="mb-12">
-              <h2 className="text-3xl font-bold text-black mb-8 text-center">
-                Services Available in {state.name}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {services.map((service) => (
+            {/* Single Service Available */}
+            {service && (
+              <div className="mb-12">
+                <h2 className="text-3xl font-bold text-black mb-8 text-center">
+                  Service Available in {state.name}
+                </h2>
+                <div className="max-w-2xl mx-auto">
                   <Link
-                    key={service.$id || service.slug}
                     href={`/services/${service.slug}?state=${state.slug}`}
-                    className="group"
+                    className="group block"
                   >
                     <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
                       {service.imageUrl && (
-                        <div className="relative h-32 w-full mb-4 rounded-lg overflow-hidden bg-gray-100">
+                        <div className="relative h-48 w-full mb-4 rounded-lg overflow-hidden bg-gray-100">
                           <Image
                             src={service.imageUrl}
                             alt={service.name}
@@ -196,30 +195,30 @@ export default async function StatePage({ params }: StatePageProps) {
                         </div>
                       )}
                       {service.category && (
-                        <div className="mb-2">
+                        <div className="mb-3">
                           <span 
-                            className="inline-block px-3 py-1 rounded-full text-xs font-medium text-white"
+                            className="inline-block px-4 py-2 rounded-full text-sm font-medium text-white"
                             style={{ backgroundColor: secondaryColor }}
                           >
                             {service.category}
                           </span>
                         </div>
                       )}
-                      <h3 className="text-xl font-bold text-black mb-2 group-hover:underline">
+                      <h3 className="text-2xl font-bold text-black mb-3 group-hover:underline">
                         {service.name}
                       </h3>
-                      <p className="text-gray-600 text-sm line-clamp-2">
+                      <p className="text-gray-600 mb-4">
                         {service.description || service.introText}
                       </p>
-                      <div className="mt-4 flex items-center gap-2">
+                      <div className="flex items-center gap-2">
                         <span 
-                          className="text-sm font-semibold"
+                          className="text-base font-semibold"
                           style={{ color: primaryColor }}
                         >
                           View Providers
                         </span>
                         <svg 
-                          className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                          className="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
                           style={{ color: primaryColor }}
                           fill="none" 
                           stroke="currentColor" 
@@ -230,9 +229,9 @@ export default async function StatePage({ params }: StatePageProps) {
                       </div>
                     </div>
                   </Link>
-                ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Call to Action */}
             <div 
@@ -246,12 +245,14 @@ export default async function StatePage({ params }: StatePageProps) {
                 Connect with verified service providers across {state.name}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/services"
-                  className="px-8 py-3 bg-white text-black rounded-full font-bold hover:shadow-lg transform hover:scale-105 transition-all duration-200"
-                >
-                  Browse All Services
-                </Link>
+                {service && (
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="px-8 py-3 bg-white text-black rounded-full font-bold hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                  >
+                    View Service
+                  </Link>
+                )}
                 <Link
                   href="/contact"
                   className="px-8 py-3 bg-transparent border-2 border-white rounded-full font-bold hover:bg-white/10 transition-all duration-200"

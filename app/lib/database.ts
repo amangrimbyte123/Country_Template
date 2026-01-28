@@ -47,6 +47,10 @@ export interface Service {
   seoDescription: string;
   h1Title: string;
   introText: string;
+  icon?: string;
+  types?: string | string[];
+  typesIntro?: string;
+  typesConclusion?: string;
   $id?: string;
   $sequence?: number;
   $createdAt?: string;
@@ -293,6 +297,37 @@ export async function getServiceBySlug(slug: string): Promise<Service | null> {
       const serviceArray = Array.isArray(services) ? services : [services];
       const service = serviceArray.find((s: Service) => s.slug === slug);
       return service || null;
+    } catch (jsonError) {
+      console.error('Error reading service from JSON:', jsonError);
+      return null;
+    }
+  }
+}
+
+// Get single/default service (for single-service system)
+export async function getSingleService(): Promise<Service | null> {
+  try {
+    const response = await databases.listDocuments(
+      DATABASE_ID,
+      SERVICES_COLLECTION_ID,
+      [Query.orderAsc('$sequence'), Query.limit(1)]
+    );
+
+    if (response.documents.length > 0) {
+      return response.documents[0] as unknown as Service;
+    }
+    return null;
+  } catch (error) {
+    console.error('Error fetching single service:', error);
+    // Fallback to JSON file if database fails
+    try {
+      const fs = await import('fs/promises');
+      const path = await import('path');
+      const filePath = path.join(process.cwd(), 'json_files', 'services.json');
+      const fileContent = await fs.readFile(filePath, 'utf-8');
+      const services = JSON.parse(fileContent);
+      const serviceArray = Array.isArray(services) ? services : [services];
+      return serviceArray.length > 0 ? serviceArray[0] : null;
     } catch (jsonError) {
       console.error('Error reading service from JSON:', jsonError);
       return null;

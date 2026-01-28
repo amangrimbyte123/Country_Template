@@ -68,7 +68,10 @@ export default function Testimonials({ basicInfo }: TestimonialsProps) {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-              O Que Nossos Usuários Dizem
+              O Que Nossos{' '}
+              <span className="block" style={{ color: primaryColor }}>
+                Usuários Dizem
+              </span>
             </h2>
             <div className="w-24 h-1 mx-auto mb-6" style={{ backgroundColor: secondaryColor }}></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">

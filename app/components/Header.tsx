@@ -32,9 +32,10 @@ export default function Header({ basicInfo }: HeaderProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Get single service for navigation (we'll fetch it on the client side or pass it as prop)
   const navLinks = [
     { href: '/', label: 'Início' },
-    { href: '/services', label: 'Serviços' },
+    { href: '/services', label: 'Serviço' }, // Changed from "Serviços" (plural) to "Serviço" (singular)
     { href: '/about', label: 'Sobre' },
     { href: '/contact', label: 'Contato' },
   ];

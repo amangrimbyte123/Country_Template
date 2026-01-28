@@ -29,7 +29,10 @@ export default function CTA({ basicInfo }: CTAProps) {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Pronto para Encontrar seu Prestador de Serviços Perfeito?
+            Pronto para Encontrar seu{' '}
+            <span className="block" style={{ color: secondaryColor }}>
+              Prestador de Serviços Perfeito?
+            </span>
           </h2>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
             Junte-se a milhares de clientes satisfeitos em {defaultCity}, {defaultState} e descubra serviços locais confiáveis hoje.

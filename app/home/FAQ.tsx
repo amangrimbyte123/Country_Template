@@ -58,7 +58,10 @@ export default function FAQ({ basicInfo }: FAQProps) {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-              Perguntas Frequentes
+              Perguntas{' '}
+              <span className="block" style={{ color: primaryColor }}>
+                Frequentes
+              </span>
             </h2>
             <div className="w-24 h-1 mx-auto mb-6" style={{ backgroundColor: secondaryColor }}></div>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">

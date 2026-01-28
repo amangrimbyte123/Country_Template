@@ -26,7 +26,10 @@ export default function AboutUs({ basicInfo }: AboutUsProps) {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-              Sobre {siteName}
+              Sobre{' '}
+              <span className="block" style={{ color: primaryColor }}>
+                {siteName}
+              </span>
             </h2>
             <div className="w-24 h-1 mx-auto mb-6" style={{ backgroundColor: secondaryColor }}></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">

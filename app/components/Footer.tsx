@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { getBasicInfo } from '../lib/database';
+import { getBasicInfo, getSingleService } from '../lib/database';
 
 export default async function Footer() {
-  // Fetch basic info for footer (Server Component)
+  // Fetch basic info and single service for footer (Server Component)
   const basicInfo = await getBasicInfo();
+  const service = await getSingleService();
   
   const siteName = basicInfo?.siteName || 'ServiceFinder Brazil';
   const tagline = basicInfo?.tagline || 'Seu guia abrangente para descobrir empresas, serviços e lugares em todo o Brasil.';
@@ -20,20 +21,16 @@ export default async function Footer() {
   const quickLinks = [
     { href: '/', label: 'Início' },
     { href: '/about', label: 'Sobre Nós' },
-    { href: '/services', label: 'Serviços' },
+    { href: '/services', label: 'Serviço' },
     { href: '/cities', label: 'Cidades' },
     { href: '/states', label: 'Estados' },
     { href: '/contact', label: 'Contato' },
   ];
 
-  const services = [
-    { href: '/services/air-conditioner-repair', label: 'Reparo de Ar Condicionado' },
-    { href: '/services/washing-machine-repair', label: 'Lavadora' },
-    { href: '/services/plumbing', label: 'Encanamento' },
-    { href: '/services/electrical', label: 'Elétrica' },
-    { href: '/services/cleaning', label: 'Limpeza' },
-    { href: '/services/hvac', label: 'Climatização' },
-  ];
+  // Use single service if available
+  const services = service ? [
+    { href: `/services/${service.slug}`, label: service.name },
+  ] : [];
 
   const legalLinks = [
     { href: '/privacy', label: 'Política de Privacidade' },
@@ -155,26 +152,28 @@ export default async function Footer() {
             </ul>
           </div>
 
-          {/* Services Column */}
-          <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Serviços Populares</h4>
-            <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service.href}>
-                  <Link
-                    href={service.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm flex items-center group"
-                  >
-                    <span 
-                      className="w-0 group-hover:w-2 h-0.5 mr-0 group-hover:mr-2 transition-all duration-200"
-                      style={{ backgroundColor: secondaryColor }}
-                    ></span>
-                    {service.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Service Column */}
+          {service && (
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Nosso Serviço</h4>
+              <ul className="space-y-3">
+                {services.map((serviceLink) => (
+                  <li key={serviceLink.href}>
+                    <Link
+                      href={serviceLink.href}
+                      className="text-gray-400 hover:text-white transition-colors duration-200 text-sm flex items-center group"
+                    >
+                      <span 
+                        className="w-0 group-hover:w-2 h-0.5 mr-0 group-hover:mr-2 transition-all duration-200"
+                        style={{ backgroundColor: secondaryColor }}
+                      ></span>
+                      {serviceLink.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Contact Column */}
           <div>

@@ -3,6 +3,15 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import ServiceSubServices from '@/app/components/services/ServiceSubServices';
+import ServiceBenefits from '@/app/components/services/ServiceBenefits';
+import ServiceBrands from '@/app/components/services/ServiceBrands';
+import ServiceSymptoms from '@/app/components/services/ServiceSymptoms';
+import ServiceWhyChoose from '@/app/components/services/ServiceWhyChoose';
+import ServiceFAQ from '@/app/components/services/ServiceFAQ';
+import ServiceTestimonials from '@/app/components/services/ServiceTestimonials';
+import ServiceAreas from '@/app/components/services/ServiceAreas';
+import WhatsAppButton from '@/app/components/WhatsAppButton';
 
 interface ServicePageProps {
   params: Promise<{ slug: string }>;
@@ -21,11 +30,11 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   }
 
   return {
-    title: service.seoTitle || `${service.name} Services – ${basicInfo?.siteName || 'ServiceFinder'}`,
+    title: service.seoTitle || `${service.name} – ${basicInfo?.siteName || 'ServiceFinder'}`,
     description: service.seoDescription || service.description,
     keywords: `${service.name}, ${service.category || ''}, home services, ${basicInfo?.metaKeywords || ''}`,
     openGraph: {
-      title: service.seoTitle || `${service.name} Services`,
+      title: service.seoTitle || `${service.name}`,
       description: service.seoDescription || service.description,
       images: service.imageUrl ? [service.imageUrl] : [],
     },
@@ -36,7 +45,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const { slug } = await params;
   const service = await getServiceBySlug(slug);
   const basicInfo = await getBasicInfo();
-  const cities = await getCities(12);
+  const cities = await getCities(50);
 
   if (!service) {
     notFound();
@@ -47,11 +56,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const siteName = basicInfo?.siteName || 'ServiceFinder Brazil';
   const defaultCity = basicInfo?.defaultCity || 'Belo Horizonte';
   const defaultState = basicInfo?.defaultState || 'Minas Gerais';
+  const contactPhone = basicInfo?.contactPhone || '+55 31 99999-9999';
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-96 overflow-hidden">
+      <section className="relative min-h-[500px] overflow-hidden pt-[72px]">
         {service.imageUrl ? (
           <Image
             src={service.imageUrl}
@@ -63,29 +73,41 @@ export default async function ServicePage({ params }: ServicePageProps) {
         ) : (
           <div 
             className="w-full h-full"
-            style={{ backgroundColor: primaryColor }}
+            style={{ 
+              background: `linear-gradient(135deg, ${primaryColor} 0%, ${primaryColor}dd 100%)`
+            }}
           ></div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20"></div>
-        <div className="absolute inset-0 flex items-end">
-          <div className="container mx-auto px-4 pb-12">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30"></div>
+        <div className="absolute inset-0 flex items-center">
+          <div className="container mx-auto px-4 py-16">
             <div className="max-w-4xl">
-              {service.category && (
-                <div className="mb-4">
-                  <span 
-                    className="inline-block px-4 py-2 rounded-full text-sm font-medium text-white"
-                    style={{ backgroundColor: secondaryColor }}
-                  >
-                    {service.category}
-                  </span>
-                </div>
-              )}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                 {service.h1Title || service.name}
               </h1>
-              <p className="text-xl text-white/90 max-w-2xl">
+              <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl">
                 {service.introText || service.description}
               </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/contact"
+                  className="px-8 py-4 bg-white text-black rounded-full font-bold hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-center"
+                  style={{ backgroundColor: secondaryColor, color: 'white' }}
+                >
+                  Solicite Já
+                </Link>
+                <a
+                  href={`https://wa.me/${contactPhone.replace(/\D/g, '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 bg-green-500 text-white rounded-full font-bold hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-center flex items-center justify-center gap-2"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                  </svg>
+                  WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -106,7 +128,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 <li>/</li>
                 <li>
                   <Link href="/services" className="hover:text-black transition-colors">
-                    Services
+                    Serviço
                   </Link>
                 </li>
                 <li>/</li>
@@ -114,9 +136,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
               </ol>
             </nav>
 
+            {/* Service Sub-Services Section */}
+            <ServiceSubServices service={service} primaryColor={primaryColor} secondaryColor={secondaryColor} />
+
             {/* Service Description */}
             <div className="bg-white rounded-xl shadow-md p-8 mb-12 border border-gray-100">
-              <h2 className="text-3xl font-bold text-black mb-4">About {service.name}</h2>
+              <h2 className="text-3xl font-bold text-black mb-4">Sobre {service.name}</h2>
               <div className="prose max-w-none">
                 <p className="text-gray-700 text-lg leading-relaxed mb-4">
                   {service.description}
@@ -129,185 +154,149 @@ export default async function ServicePage({ params }: ServicePageProps) {
               </div>
             </div>
 
-            {/* Cities Available */}
-            <div className="mb-12">
-              <h2 className="text-3xl font-bold text-black mb-8 text-center">
-                Available in These Cities
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {cities.map((city) => (
-                  <Link
-                    key={city.$id || city.slug}
-                    href={`/cities/${city.slug}?service=${service.slug}`}
-                    className="group"
-                  >
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-                      {city.image && (
-                        <div className="relative h-32 w-full mb-4 rounded-lg overflow-hidden bg-gray-100">
-                          <Image
-                            src={city.image}
-                            alt={city.name}
-                            fill
-                            className="object-cover group-hover:scale-110 transition-transform duration-300"
-                          />
-                        </div>
+            {/* Types We Service Section */}
+            {(() => {
+              let typesArray: string[] = [];
+              if (service.types) {
+                if (typeof service.types === 'string') {
+                  try {
+                    typesArray = JSON.parse(service.types);
+                  } catch (e) {
+                    typesArray = [service.types];
+                  }
+                } else {
+                  typesArray = service.types;
+                }
+              }
+
+              return typesArray.length > 0 ? (
+                <div className="bg-white rounded-xl shadow-md p-8 mb-12 border border-gray-100">
+                  <div className="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                      <h2 className="text-3xl font-bold text-black mb-4">
+                        Tipos de {service.name.replace(/Conserto de |Reparo de |Serviço de /gi, '')} que Consertamos
+                      </h2>
+                      {service.typesIntro && (
+                        <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                          {service.typesIntro}
+                        </p>
                       )}
-                      <h3 className="text-xl font-bold text-black mb-2 group-hover:underline">
-                        {city.name}
-                      </h3>
-                      <p className="text-gray-600 text-sm line-clamp-2">
-                        {city.description || city.introText}
-                      </p>
-                      <div className="mt-4 flex items-center gap-2">
-                        <span 
-                          className="text-sm font-semibold"
-                          style={{ color: primaryColor }}
-                        >
-                          Find Providers
-                        </span>
-                        <svg 
-                          className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                          style={{ color: primaryColor }}
-                          fill="none" 
-                          stroke="currentColor" 
-                          viewBox="0 0 24 24"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </div>
+                      <ul className="space-y-3 mb-6">
+                        {typesArray.map((type, index) => (
+                          <li key={index} className="flex items-start gap-3">
+                            <span 
+                              className="w-2 h-2 rounded-full mt-2 flex-shrink-0"
+                              style={{ backgroundColor: secondaryColor }}
+                            ></span>
+                            <span className="text-gray-700 text-lg">{type}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {service.typesConclusion && (
+                        <p className="text-gray-700 text-lg leading-relaxed">
+                          {service.typesConclusion}
+                        </p>
+                      )}
                     </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
+                    
+                    {service.icon && (
+                      <div className="relative h-96 w-full rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center">
+                        <Image
+                          src={service.icon}
+                          alt={`${service.name} Types`}
+                          fill
+                          className="object-contain p-8"
+                        />
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ) : null;
+            })()}
 
-            {/* Service Features/Details */}
-            <div className="bg-gray-50 rounded-xl p-8 mb-12">
-              <h2 className="text-3xl font-bold text-black mb-6 text-center">
-                Why Choose Our {service.name} Service?
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="flex items-start gap-4">
-                  <div 
-                    className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: `${secondaryColor}20` }}
-                  >
-                    <svg 
-                      className="w-6 h-6"
-                      style={{ color: secondaryColor }}
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-black mb-2">Verified Professionals</h3>
-                    <p className="text-gray-600">
-                      All service providers are verified and background-checked for your peace of mind.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div 
-                    className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: `${secondaryColor}20` }}
-                  >
-                    <svg 
-                      className="w-6 h-6"
-                      style={{ color: secondaryColor }}
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-black mb-2">Fast Response</h3>
-                    <p className="text-gray-600">
-                      Get connected with service providers quickly. Most respond within hours.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div 
-                    className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: `${secondaryColor}20` }}
-                  >
-                    <svg 
-                      className="w-6 h-6"
-                      style={{ color: secondaryColor }}
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-black mb-2">Quality Guaranteed</h3>
-                    <p className="text-gray-600">
-                      Read reviews from real customers to ensure you get the best service.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div 
-                    className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: `${secondaryColor}20` }}
-                  >
-                    <svg 
-                      className="w-6 h-6"
-                      style={{ color: secondaryColor }}
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-black mb-2">Competitive Pricing</h3>
-                    <p className="text-gray-600">
-                      Compare prices from multiple providers to get the best value for your money.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Benefits Section */}
+            <ServiceBenefits service={service} primaryColor={primaryColor} secondaryColor={secondaryColor} />
 
-            {/* Call to Action */}
+            {/* Brands Section */}
+            <ServiceBrands service={service} primaryColor={primaryColor} secondaryColor={secondaryColor} />
+
+            {/* Symptoms Section */}
+            <ServiceSymptoms service={service} primaryColor={primaryColor} secondaryColor={secondaryColor} />
+
+            {/* Why Choose Section */}
+            <ServiceWhyChoose service={service} primaryColor={primaryColor} secondaryColor={secondaryColor} defaultCity={defaultCity} />
+
+            {/* CTA Section */}
             <div 
-              className="rounded-xl p-8 text-center text-white"
+              className="rounded-xl p-8 md:p-12 text-center text-white mb-12"
               style={{ backgroundColor: secondaryColor }}
             >
-              <h3 className="text-3xl font-bold mb-4">
-                Need {service.name} in {defaultCity}?
+              <h3 className="text-3xl md:text-4xl font-bold mb-4">
+                {service.name} Perto de Mim
               </h3>
-              <p className="text-xl mb-6 opacity-90">
-                Find trusted {service.name.toLowerCase()} providers near you
+              <p className="text-xl mb-6 opacity-90 max-w-2xl mx-auto">
+                Precisa de {service.name.toLowerCase()}? Resolvemos com atendimento rápido e garantia!
+                Assistência técnica em {defaultCity} 24h com peças originais.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href={`/cities/${defaultCity.toLowerCase().replace(/\s+/g, '-')}?service=${service.slug}`}
+                  href="/contact"
                   className="px-8 py-3 bg-white text-black rounded-full font-bold hover:shadow-lg transform hover:scale-105 transition-all duration-200"
                 >
-                  Find Providers in {defaultCity}
+                  Solicite seu orçamento
+                </Link>
+                <a
+                  href={`https://wa.me/${contactPhone.replace(/\D/g, '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-3 bg-transparent border-2 border-white rounded-full font-bold hover:bg-white/10 transition-all duration-200"
+                >
+                  Fale no WhatsApp
+                </a>
+              </div>
+            </div>
+
+            {/* FAQ Section */}
+            <ServiceFAQ service={service} primaryColor={primaryColor} secondaryColor={secondaryColor} />
+
+            {/* Testimonials Section */}
+            <ServiceTestimonials service={service} primaryColor={primaryColor} secondaryColor={secondaryColor} defaultCity={defaultCity} />
+
+            {/* Service Areas */}
+            <ServiceAreas cities={cities} service={service} primaryColor={primaryColor} secondaryColor={secondaryColor} />
+
+            {/* Final CTA */}
+            <div 
+              className="rounded-xl p-8 md:p-12 text-center text-white mt-12"
+              style={{ backgroundColor: primaryColor }}
+            >
+              <h3 className="text-3xl md:text-4xl font-bold mb-4">
+                Precisa de {service.name} em {defaultCity}?
+              </h3>
+              <p className="text-xl mb-6 opacity-90">
+                Encontre prestadores de serviços confiáveis perto de você
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/contact"
+                  className="px-8 py-3 bg-white text-black rounded-full font-bold hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                >
+                  Solicite Agora
                 </Link>
                 <Link
                   href="/contact"
                   className="px-8 py-3 bg-transparent border-2 border-white rounded-full font-bold hover:bg-white/10 transition-all duration-200"
                 >
-                  Contact Us
+                  Entre em Contato
                 </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* WhatsApp Floating Button */}
+      <WhatsAppButton phone={contactPhone} />
     </div>
   );
 }
-
