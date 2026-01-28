@@ -52,11 +52,11 @@ export default function FAQ({ basicInfo }: FAQProps) {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 md:py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
               Perguntas{' '}
               <span className="block" style={{ color: primaryColor }}>
@@ -112,7 +112,7 @@ export default function FAQ({ basicInfo }: FAQProps) {
           </div>
 
           {/* Bottom CTA */}
-          <div className="mt-16 text-center">
+          <div className="mt-12 text-center">
             <p className="text-gray-600 mb-4">
               Ainda tem perguntas?
             </p>

@@ -93,7 +93,7 @@ export default function RefrigeratorAdvantages({ basicInfo }: RefrigeratorAdvant
   ];
 
   return (
-    <section className="py-10 md:py-12 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5">
         <div 

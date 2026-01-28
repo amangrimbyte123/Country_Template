@@ -74,11 +74,11 @@ export default function WhyWeAreFirstChoice({ basicInfo }: WhyWeAreFirstChoicePr
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
               Por Que Somos a{' '}
               <span className="block" style={{ color: primaryColor }}>
@@ -118,7 +118,7 @@ export default function WhyWeAreFirstChoice({ basicInfo }: WhyWeAreFirstChoicePr
           </div>
 
           {/* Bottom CTA */}
-          <div className="mt-16 text-center">
+          <div className="mt-12 text-center">
             <div 
               className="inline-block px-8 py-4 rounded-full text-white font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 cursor-pointer"
               style={{ backgroundColor: secondaryColor }}

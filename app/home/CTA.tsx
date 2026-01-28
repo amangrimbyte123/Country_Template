@@ -15,7 +15,7 @@ export default function CTA({ basicInfo }: CTAProps) {
 
   return (
     <section 
-      className="py-20 relative overflow-hidden"
+      className="py-12 md:py-16 relative overflow-hidden"
       style={{ 
         background: `linear-gradient(135deg, ${primaryColor} 0%, ${primaryColor}dd 50%, ${primaryColor} 100%)`,
       }}

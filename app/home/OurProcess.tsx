@@ -54,11 +54,11 @@ export default function OurProcess({ basicInfo }: OurProcessProps) {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 md:py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4">
               Como{' '}
               <span className="block" style={{ color: primaryColor }}>
@@ -117,7 +117,7 @@ export default function OurProcess({ basicInfo }: OurProcessProps) {
           </div>
 
           {/* Bottom Note */}
-          <div className="mt-16 text-center">
+          <div className="mt-12 text-center">
             <div className="inline-block bg-gray-50 px-4 sm:px-6 md:px-8 py-3 md:py-4 rounded-full">
               <p className="text-sm sm:text-base text-gray-600">
                 <span className="font-bold text-black">Pronto para começar?</span> Busque serviços agora e experimente a diferença!

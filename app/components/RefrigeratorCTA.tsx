@@ -18,7 +18,7 @@ export default function RefrigeratorCTA({ basicInfo, cityName }: RefrigeratorCTA
   const whatsappUrl = `https://wa.me/${cleanPhone}?text=Hello, I need refrigerator repair service in ${defaultCity}`;
 
   return (
-    <section className="py-4 md:py-5 relative overflow-hidden">
+    <section className="py-12 md:py-16 relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div 

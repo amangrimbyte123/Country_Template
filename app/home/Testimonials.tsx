@@ -62,11 +62,11 @@ export default function Testimonials({ basicInfo }: TestimonialsProps) {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 md:py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
               O Que Nossos{' '}
               <span className="block" style={{ color: primaryColor }}>
@@ -134,7 +134,7 @@ export default function Testimonials({ basicInfo }: TestimonialsProps) {
           </div>
 
           {/* Bottom Stats */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div>
               <div className="text-4xl font-bold mb-2" style={{ color: primaryColor }}>4.8/5</div>
               <div className="text-gray-600">Avaliação Média</div>

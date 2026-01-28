@@ -20,11 +20,11 @@ export default function AboutUs({ basicInfo }: AboutUsProps) {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 md:py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
               Sobre{' '}
               <span className="block" style={{ color: primaryColor }}>
@@ -103,7 +103,7 @@ export default function AboutUs({ basicInfo }: AboutUsProps) {
             {stats.map((stat, index) => (
               <div 
                 key={index}
-                className="text-center p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow"
+                className="text-center p-6 rounded-xl bg-white shadow-lg border border-gray-100"
               >
                 <div 
                   className="text-3xl md:text-4xl font-bold mb-2"
